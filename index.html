@@ -3,44 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KROMATIKA + Colore&Calore — Tinteggiature & Rifiniture d’interni a Milano</title>
+  <meta name="color-scheme" content="dark light" />
 
-  <meta name="description" content="KROMATIKA + Colore&Calore: dal 1974, tre generazioni di decoratori d’interni a Milano e Trezzano sul Naviglio. QSC: Qualità, Servizio, Convenienza. Tinteggiature, effetti materici, vernici termoisolanti." />
-  <meta name="theme-color" content="#0f0f10" />
+  <title>KROMATIKA + Colore&Calore — Imbianchini e Decoratori d’Interni a Milano dal 1974</title>
+  <meta name="description" content="KROMATIKA + Colore&Calore: tinteggiature e rifiniture d'interni a Milano e Trezzano sul Naviglio dal 1974. QSC: Qualità • Servizio • Convenienza. Marchi: Sikkens, Lechler, Sigma, Oikos, Graesan." />
   <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b0b0c" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="KROMATIKA + Colore&Calore — Milano" />
-  <meta property="og:description" content="Dal 1974, tre generazioni di decoratori d’interni. QSC: Qualità, Servizio, Convenienza." />
-  <meta property="og:image" content="assets/img/og-cover.webp" />
+  <meta property="og:description" content="Decoratori d'interni dal 1974. QSC: Qualità • Servizio • Convenienza. Milano • Trezzano sul Naviglio." />
+  <meta property="og:image" content="assets/og-cover.webp" />
   <meta property="og:locale" content="it_IT" />
 
-  <link rel="preload" as="image" href="assets/img/hero.webp" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" as="image" href="assets/hero.webp" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- SEO: LocalBusiness -->
+  <!-- LocalBusiness (SEO) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "KROMATIKA + Colore&Calore",
-    "description": "Tinteggiature e rifiniture d'interni dal 1974. QSC: Qualità, Servizio, Convenienza. Tre generazioni di decoratori d’interni.",
-    "areaServed": ["Milano", "Trezzano sul Naviglio", "Provincia di Milano"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Trezzano sul Naviglio",
-      "addressRegion": "MI",
-      "addressCountry": "IT"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"KROMATIKA + Colore&Calore",
+    "description":"Tinteggiature e rifiniture d'interni dal 1974. QSC: Qualità, Servizio, Convenienza. Milano e Trezzano sul Naviglio.",
+    "areaServed":["Milano","Trezzano sul Naviglio","Provincia di Milano"],
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Trezzano sul Naviglio",
+      "addressRegion":"MI",
+      "addressCountry":"IT"
     },
-    "email": "colorecalore1974@gmail.com",
-    "telephone": ["+39 3398602509", "+39 3891012147"],
-    "openingHours": ["Mo-Fr 09:00-18:30", "Sa 09:00-13:30"],
-    "sameAs": [
-      "https://www.facebook.com/colorecalore",
-      "https://www.instapro.it/ditta/kromatika-di-maria-teresa-foddis",
-      "https://www.prontopro.it/pro/colore-calore"
-    ]
+    "telephone":["+39 3398602509","+39 3891012147"],
+    "email":"colorecalore1974@gmail.com",
+    "openingHours":["Mo-Fr 09:00-18:30","Sa 09:00-13:30"],
+    "sameAs":["https://www.facebook.com/colorecalore"]
   }
   </script>
 </head>
@@ -48,10 +48,10 @@
 <body>
   <a class="skip" href="#contenuto">Salta al contenuto</a>
 
-  <!-- HEADER -->
-  <header class="header">
+  <!-- Header -->
+  <header class="header" data-header>
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Vai alla home">
+      <a class="brand" href="#top" aria-label="KROMATIKA + Colore&Calore, vai all'inizio pagina">
         <span class="brand__mark" aria-hidden="true">K</span>
         <span class="brand__text">
           <span class="brand__name">KROMATIKA</span>
@@ -69,61 +69,78 @@
           <li><a href="#azienda">Azienda</a></li>
           <li><a href="#servizi">Servizi</a></li>
           <li><a href="#lavori">Lavori</a></li>
-          <li><a href="#zone">Zone servite</a></li>
+          <li><a href="#processo">Come lavoriamo</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contatti" class="nav__cta">Contatti</a></li>
+          <li><a class="nav__cta" href="#contatti">Contatti</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="contenuto">
-    <!-- HERO -->
-    <section id="top" class="hero" aria-label="Presentazione">
+    <!-- Hero -->
+    <section id="top" class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="badge">QSC: Qualità • Servizio • Convenienza</p>
-          <h1>Decoratori d’interni a Milano, dal 1974.</h1>
-          <p class="lead">
-            <strong>KROMATIKA + Colore&Calore</strong> è alla <strong>terza generazione</strong>.
-            Tinteggiature, rifiniture ed effetti moderni, con attenzione a <strong>tempi certi</strong> e <strong>pulizia</strong>.
+          <p class="badge reveal">QSC: Qualità • Servizio • Convenienza</p>
+
+          <h1 class="reveal">Decoratori d’interni a Milano dal 1974.</h1>
+
+          <p class="lead reveal">
+            <strong>KROMATIKA + Colore&Calore</strong> — tre generazioni di imbianchini.
+            Tinteggiature, rifiniture ed effetti materici con attenzione a <strong>tempi certi</strong> e <strong>pulizia</strong>.
           </p>
 
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="tel:+393398602509">Chiama ora</a>
-            <a class="btn btn--ghost" href="#lavori">Guarda i lavori</a>
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary" href="tel:+393398602509">Chiama 339 860 2509</a>
+            <a class="btn btn--ghost" href="#lavori">Vedi la galleria</a>
+
+            <!-- WhatsApp (click-to-chat) -->
+            <a class="btn btn--ghost" target="_blank" rel="noopener"
+               href="https://wa.me/393398602509?text=Buongiorno%2C%20vorrei%20un%20preventivo%20per%20tinteggiatura%20interni.%20Posso%20avere%20informazioni%3F">
+              WhatsApp
+            </a>
           </div>
 
-          <div class="hero__meta" aria-label="Punti di forza">
-            <div class="meta"><span class="meta__k">Zona</span><span class="meta__v">Milano • Trezzano S/N</span></div>
-            <div class="meta"><span class="meta__k">Esperienza</span><span class="meta__v">Dal 1974</span></div>
-            <div class="meta"><span class="meta__k">Qualità</span><span class="meta__v">Marchi top</span></div>
+          <div class="hero__meta reveal" aria-label="Dati rapidi">
+            <div class="stat">
+              <span class="stat__k">Zona</span>
+              <span class="stat__v">Milano • Trezzano S/N</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Esperienza</span>
+              <span class="stat__v">Dal 1974</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Impegno</span>
+              <span class="stat__v">Tempi & pulizia</span>
+            </div>
           </div>
 
-          <div class="hero__contacts" aria-label="Contatti rapidi">
+          <div class="hero__contacts reveal" aria-label="Contatti rapidi">
             <a class="chip" href="tel:+393398602509"><span aria-hidden="true">📞</span> 339 860 2509</a>
             <a class="chip" href="tel:+393891012147"><span aria-hidden="true">📞</span> 389 101 2147</a>
             <a class="chip" href="mailto:colorecalore1974@gmail.com"><span aria-hidden="true">✉️</span> colorecalore1974@gmail.com</a>
           </div>
         </div>
 
-        <div class="hero__media">
+        <div class="hero__media reveal" aria-label="Foto lavori">
           <img
-            src="assets/img/hero.webp"
-            alt="Esempio di tinteggiatura e rifinitura d’interni"
+            src="assets/hero.webp"
+            alt="Esempio di tinteggiatura e rifinitura d'interni"
             width="1200"
             height="900"
             loading="eager"
             decoding="async"
           />
-          <div class="hero__mediaOverlay" aria-hidden="true"></div>
+          <div class="hero__glow" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <section class="trust" aria-label="Marchi e materiali">
-      <div class="container trust__inner">
+    <!-- Trust / Brands -->
+    <section class="trust" aria-label="Marchi utilizzati">
+      <div class="container trust__inner reveal">
         <p class="trust__title">Prodotti utilizzati (garanzia di altissima qualità)</p>
         <div class="trust__list" role="list">
           <span class="trust__item" role="listitem">SIKKENS</span>
@@ -135,23 +152,23 @@
       </div>
     </section>
 
-    <!-- AZIENDA -->
+    <!-- Azienda -->
     <section id="azienda" class="section section--alt">
       <div class="container split">
-        <div>
+        <div class="reveal">
           <h2>Presentazione azienda</h2>
           <p class="section__lead">
-            Tre generazioni di imbianchini e decoratori d’interni: qualità reale, servizio chiaro, convenienza senza sorprese.
+            Dal 1974 portiamo avanti il nostro lavoro con passione e serietà. Il nostro stile è QSC.
           </p>
 
-          <div class="story">
+          <div class="prose">
             <p>
-              Kromatika + Colore&Calore hanno fatto del fattore <strong>QSC</strong> (Qualità • Servizio • Convenienza) il proprio stile.
-              Dal <strong>1974</strong> continuiamo ciò che da decenni la nostra famiglia porta avanti, con la passione e la serietà di chi ama il suo lavoro.
+              Siamo alla <strong>terza generazione</strong> di decoratori d’interni. I nostri collaboratori uniscono anni di esperienza
+              a tecniche pittoriche moderne.
             </p>
             <p>
-              Anni di esperienza hanno formato i nostri collaboratori, aperti sempre alle sfide di nuove tecniche pittoriche.
-              Offriamo sempre tempistiche chiare e lasciamo tutto completamente pulito.
+              Ci differenziamo per <strong>organizzazione</strong>, <strong>rispetto dei tempi</strong> e <strong>pulizia</strong>.
+              Materiali di qualità e corretta applicazione sono la nostra prima garanzia, con assistenza post-lavoro se necessaria.
             </p>
           </div>
 
@@ -162,15 +179,15 @@
           </div>
 
           <div class="callout">
-            <h3 class="callout__title">Collaborazioni (oltre la tinteggiatura)</h3>
+            <h3 class="callout__title">Collaborazioni</h3>
             <p class="muted">
-              Parquet, impianti elettrici, impianti allarme, cartongesso e muratura, condizionamento.
-              Collaborazioni consolidate per una forza lavoro coesa e completa.
+              Parquet • Impianti elettrici • Impianti allarme • Cartongesso e muratura • Condizionamento.
+              Collaborazioni consolidate per offrire un servizio completo.
             </p>
           </div>
         </div>
 
-        <aside class="infoBox" aria-label="Orari e contatti">
+        <aside class="infoBox reveal" aria-label="Orari e contatti">
           <h3>Orari d’ufficio</h3>
           <ul class="hours">
             <li><span>Lun – Ven</span><strong>09:00 – 18:30</strong></li>
@@ -179,95 +196,101 @@
 
           <div class="divider"></div>
 
-          <h3>Contatti diretti</h3>
-          <p class="muted small">Preferiamo il sopralluogo: preventivo più accurato.</p>
+          <h3>Contatti</h3>
           <div class="stack">
             <a class="btn btn--primary btn--full" href="tel:+393398602509">Chiama 339 860 2509</a>
             <a class="btn btn--ghost btn--full" href="tel:+393891012147">Chiama 389 101 2147</a>
-            <a class="btn btn--ghost btn--full" href="mailto:colorecalore1974@gmail.com">Scrivi una mail</a>
+            <a class="btn btn--ghost btn--full" href="mailto:colorecalore1974@gmail.com">Invia email</a>
           </div>
+
+          <p class="muted small" style="margin-top:12px">
+            Preferiamo il sopralluogo: consente un preventivo più accurato.
+          </p>
         </aside>
       </div>
     </section>
 
-    <!-- SERVIZI -->
+    <!-- Servizi -->
     <section id="servizi" class="section">
       <div class="container">
-        <div class="sectionHead">
+        <div class="sectionHead reveal">
           <h2>Servizi</h2>
           <p class="section__lead">
-            Specializzati in effetti materici, tinteggiature e verniciature di ogni genere, con attenzione alle vernici termoisolanti.
+            Effetti materici, tinteggiature e verniciature di ogni genere, con particolare attenzione alle vernici termoisolanti.
           </p>
         </div>
 
         <div class="grid3">
-          <article class="card">
+          <article class="card reveal">
             <h3>Tinteggiature d’interni</h3>
-            <p>Pitture, imbiancature e finiture per case, uffici e locali commerciali.</p>
+            <p>Case, uffici e locali commerciali. Protezione superfici, ordine e pulizia.</p>
             <ul class="mini">
-              <li>Protezione superfici</li>
+              <li>Preparazione pareti</li>
               <li>Tempi certi</li>
-              <li>Massima pulizia</li>
+              <li>Consegna pulita</li>
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Effetti materici & decorativi</h3>
-            <p>Texture moderne, pareti decorative e finiture speciali su misura.</p>
+            <p>Texture moderne e finiture speciali per valorizzare gli ambienti.</p>
             <ul class="mini">
-              <li>Finiture speciali</li>
+              <li>Soluzioni su misura</li>
               <li>Consulenza colori</li>
               <li>Dettagli curati</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3>Vernici termoisolanti</h3>
-            <p>Prodotti selezionati e applicazione esperta per comfort e prestazioni migliori.</p>
+          <article class="card reveal">
+            <h3>Verniciature & termoisolanti</h3>
+            <p>Applicazione corretta e prodotti selezionati: Sikkens, Lechler, Sigma, Oikos, Graesan.</p>
             <ul class="mini">
-              <li>Marchi top</li>
-              <li>Applicazione corretta</li>
+              <li>Alta qualità</li>
+              <li>Durata nel tempo</li>
               <li>Assistenza post-lavoro</li>
             </ul>
           </article>
         </div>
 
-        <div class="ctaBand">
+        <div class="ctaBand reveal">
           <div>
-            <h3>Preventivo dettagliato</h3>
-            <p class="muted">Servono metri quadrati, numero locali e stato di mantenimento. Il sopralluogo è consigliato.</p>
+            <h3>Preventivo preciso</h3>
+            <p class="muted">
+              Per un preventivo dettagliato servono: metri quadrati, numero locali e stato di mantenimento.
+              Il sopralluogo è consigliato.
+            </p>
           </div>
           <a class="btn btn--primary" href="#contatti">Richiedi informazioni</a>
         </div>
       </div>
     </section>
 
-    <!-- GALLERIA -->
+    <!-- Galleria -->
     <section id="lavori" class="section section--alt">
       <div class="container">
-        <div class="sectionHead">
+        <div class="sectionHead reveal">
           <h2>Galleria lavori</h2>
-          <p class="section__lead">Inserisci le foto in <code>assets/img/lavori/</code> (1.webp…6.webp) o cambia i nomi qui sotto.</p>
+          <p class="section__lead">Clicca sulle foto per ingrandire (lightbox).</p>
         </div>
 
         <div class="gallery" aria-label="Galleria fotografica">
-          <a class="shot" href="assets/img/lavori/1.webp" data-caption="Tinteggiatura interni — finitura pulita">
-            <img src="assets/img/lavori/1.webp" alt="Tinteggiatura interni" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro1.webp" data-caption="Lavoro 1 — Tinteggiatura interni">
+            <img src="assets/lavoro1.webp" alt="Lavoro 1: tinteggiatura interni" width="900" height="900" loading="lazy" decoding="async" />
           </a>
-          <a class="shot" href="assets/img/lavori/2.webp" data-caption="Effetto materico — parete decorativa">
-            <img src="assets/img/lavori/2.webp" alt="Effetto materico parete decorativa" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro2.webp" data-caption="Lavoro 2 — Parete decorativa">
+            <img src="assets/lavoro2.webp" alt="Lavoro 2: parete decorativa" width="900" height="900" loading="lazy" decoding="async" />
           </a>
-          <a class="shot" href="assets/img/lavori/3.webp" data-caption="Rifiniture — dettagli e precisione">
-            <img src="assets/img/lavori/3.webp" alt="Rifiniture e dettagli" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro3.webp" data-caption="Lavoro 3 — Rifiniture">
+            <img src="assets/lavoro3.webp" alt="Lavoro 3: rifiniture" width="900" height="900" loading="lazy" decoding="async" />
           </a>
-          <a class="shot" href="assets/img/lavori/4.webp" data-caption="Verniciatura — risultato uniforme">
-            <img src="assets/img/lavori/4.webp" alt="Verniciatura" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro4.webp" data-caption="Lavoro 4 — Verniciatura">
+            <img src="assets/lavoro4.webp" alt="Lavoro 4: verniciatura" width="900" height="900" loading="lazy" decoding="async" />
           </a>
-          <a class="shot" href="assets/img/lavori/5.webp" data-caption="Interni — luminosità e ordine">
-            <img src="assets/img/lavori/5.webp" alt="Interni luminosi" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro5.webp" data-caption="Lavoro 5 — Interni luminosi">
+            <img src="assets/lavoro5.webp" alt="Lavoro 5: interni luminosi" width="900" height="900" loading="lazy" decoding="async" />
           </a>
-          <a class="shot" href="assets/img/lavori/6.webp" data-caption="Decorazione — finitura moderna">
-            <img src="assets/img/lavori/6.webp" alt="Decorazione finitura moderna" width="900" height="900" loading="lazy" decoding="async" />
+          <a class="shot reveal" href="assets/lavoro6.webp" data-caption="Lavoro 6 — Finitura moderna">
+            <img src="assets/lavoro6.webp" alt="Lavoro 6: finitura moderna" width="900" height="900" loading="lazy" decoding="async" />
           </a>
         </div>
 
@@ -281,26 +304,34 @@
       </div>
     </section>
 
-    <!-- ZONE SERVITE -->
-    <section id="zone" class="section">
+    <!-- Processo -->
+    <section id="processo" class="section">
       <div class="container">
-        <div class="sectionHead">
-          <h2>Zone servite</h2>
-          <p class="section__lead">Operiamo a Milano e provincia, con base a Trezzano sul Naviglio.</p>
+        <div class="sectionHead reveal">
+          <h2>Come lavoriamo</h2>
+          <p class="section__lead">Un metodo chiaro: preventivo accurato, tempi certi, consegna pulita.</p>
         </div>
 
-        <div class="zones">
-          <div class="zoneCard">
-            <h3>Milano</h3>
-            <p class="muted">Interventi in città per appartamenti, uffici e locali commerciali.</p>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__n" aria-hidden="true">1</div>
+            <h3>Sopralluogo</h3>
+            <p class="muted">Valutiamo superfici, stato di mantenimento e soluzione migliore.</p>
           </div>
-          <div class="zoneCard">
-            <h3>Trezzano sul Naviglio (MI)</h3>
-            <p class="muted">Base operativa e sopralluoghi rapidi in zona.</p>
+          <div class="step reveal">
+            <div class="step__n" aria-hidden="true">2</div>
+            <h3>Preventivo</h3>
+            <p class="muted">Chiaro e dettagliato: materiali, lavorazioni e tempistiche.</p>
           </div>
-          <div class="zoneCard">
-            <h3>Provincia di Milano</h3>
-            <p class="muted">Disponibili anche nei comuni limitrofi.</p>
+          <div class="step reveal">
+            <div class="step__n" aria-hidden="true">3</div>
+            <h3>Esecuzione</h3>
+            <p class="muted">Protezione, lavorazione precisa e rispetto dei tempi concordati.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__n" aria-hidden="true">4</div>
+            <h3>Consegna pulita</h3>
+            <p class="muted">Lasciamo tutto ordinato. Assistenza post-lavoro se necessaria.</p>
           </div>
         </div>
       </div>
@@ -309,54 +340,54 @@
     <!-- FAQ -->
     <section id="faq" class="section section--alt">
       <div class="container">
-        <div class="sectionHead">
+        <div class="sectionHead reveal">
           <h2>FAQ</h2>
-          <p class="section__lead">Le domande più frequenti (risposte rapide e chiare).</p>
+          <p class="section__lead">Risposte rapide ai dubbi più frequenti.</p>
         </div>
 
         <div class="faq">
-          <details class="faq__item">
+          <details class="faq__item reveal">
             <summary>Che tipologia di clientela avete?</summary>
             <div class="faq__content"><p>Architetti, privati e amministratori.</p></div>
           </details>
 
-          <details class="faq__item">
+          <details class="faq__item reveal">
             <summary>Quali sono i dubbi più frequenti?</summary>
-            <div class="faq__content"><p>Durata dei lavori e pulizia: diamo una tempistica precisa e lasciamo tutto completamente pulito.</p></div>
+            <div class="faq__content"><p>Durata dei lavori e pulizia: diamo sempre una tempistica precisa e lasciamo tutto completamente pulito.</p></div>
           </details>
 
-          <details class="faq__item">
+          <details class="faq__item reveal">
             <summary>Di quali dati avete bisogno per un preventivo dettagliato?</summary>
-            <div class="faq__content"><p>Metri quadrati, numero locali e stato di mantenimento. Il sopralluogo è consigliato.</p></div>
+            <div class="faq__content"><p>Metri quadrati, numero locali e stato di mantenimento. Preferiamo il sopralluogo per un preventivo più accurato.</p></div>
           </details>
 
-          <details class="faq__item">
+          <details class="faq__item reveal">
             <summary>Quali garanzie offrite?</summary>
-            <div class="faq__content"><p>Materiali ed esperienza sono garanzia di ottimi risultati; assistenza post-lavoro se necessario.</p></div>
+            <div class="faq__content"><p>I materiali e l’esperienza sono garanzia di ottimi risultati. Inoltre offriamo assistenza post-lavoro se necessario.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- CONTATTI + SOCIAL -->
+    <!-- Contatti + Social -->
     <section id="contatti" class="section">
       <div class="container split">
-        <div>
-          <h2>Contatti</h2>
-          <p class="section__lead">Telefono, email e social: rispondiamo rapidamente.</p>
+        <div class="reveal">
+          <h2>Contatti diretti</h2>
+          <p class="section__lead">Milano • Trezzano sul Naviglio (MI) — Registro Imprese Milano</p>
 
           <div class="contactGrid">
             <div class="contactCard">
               <h3>Telefono</h3>
               <a class="contactLink" href="tel:+393398602509">339 860 2509</a>
               <a class="contactLink" href="tel:+393891012147">389 101 2147</a>
-              <p class="muted small">Preferiamo il sopralluogo per un preventivo accurato.</p>
+              <p class="muted small">Orari: Lun–Ven 09:00–18:30 • Sab 09:00–13:30</p>
             </div>
 
             <div class="contactCard">
               <h3>Email</h3>
               <a class="contactLink" href="mailto:colorecalore1974@gmail.com">colorecalore1974@gmail.com</a>
-              <p class="muted small">Registro Imprese Milano • Trezzano sul Naviglio (MI)</p>
+              <p class="muted small">P. IVA 10227780961</p>
             </div>
           </div>
 
@@ -371,11 +402,9 @@
           </div>
         </div>
 
-        <aside class="formBox" aria-label="Richiesta informazioni">
+        <aside class="formBox reveal" aria-label="Richiesta informazioni">
           <h3>Richiedi informazioni</h3>
-          <p class="muted small">
-            Modulo statico: mostra conferma. Se vuoi invio reale email su GitHub Pages, ti preparo Formspree gratis.
-          </p>
+          <p class="muted small">Modulo statico (mostra conferma). Per invio reale su GitHub Pages possiamo usare Formspree.</p>
 
           <form id="contactForm" class="form">
             <label>Nome
@@ -413,12 +442,14 @@
       </div>
 
       <div class="footer__copy muted small">
-        © <span id="year"></span> KROMATIKA + Colore&Calore — Trezzano S/N (MI) — Registro Imprese Milano
+        © <span id="year"></span> KROMATIKA + Colore&Calore — Milano • Trezzano S/N (MI)
       </div>
     </div>
   </footer>
 
+  <!-- JS: menu mobile + lightbox + reveal on scroll + form -->
   <script>
+    // anno footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // menu mobile
@@ -437,7 +468,7 @@
       });
     }
 
-    // lightbox
+    // lightbox (dialog)
     const dlg = document.getElementById("lightbox");
     const dlgImg = dlg ? dlg.querySelector(".lightbox__img") : null;
     const dlgCap = dlg ? dlg.querySelector(".lightbox__cap") : null;
@@ -455,6 +486,23 @@
 
     document.querySelector(".lightbox__close")?.addEventListener("click", () => dlg?.close());
     dlg?.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+    // reveal on scroll (rispetta prefers-reduced-motion)
+    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReduced) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.classList.add("is-in");
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
+    }
 
     // form statico
     const form = document.getElementById("contactForm");
