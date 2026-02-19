@@ -5,20 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
 
-  <title>KROMATIKA + Colore&Calore — Imbianchini e Decoratori d’Interni a Milano dal 1974</title>
-  <meta name="description" content="KROMATIKA + Colore&Calore: tinteggiature e rifiniture d'interni a Milano e Trezzano sul Naviglio dal 1974. QSC: Qualità • Servizio • Convenienza. Marchi: Sikkens, Lechler, Sigma, Oikos, Graesan." />
+  <title>KROMATIKA + Colore&Calore — Decoratori d’Interni a Milano dal 1974</title>
+  <meta name="description" content="KROMATIKA + Colore&Calore: tinteggiature e rifiniture d'interni a Milano dal 1974. QSC: Qualità • Servizio • Convenienza. Marchi: Sikkens, Lechler, Sigma, Oikos, Graesan." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b0b0c" />
+
+  <link rel="canonical" href="https://kromatika-colorecalore.github.io/" />
+
+  <!-- ✅ FAVICON / APP ICONS (metti i file in /assets) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://www.facebook.com" crossorigin>
+  <link rel="preconnect" href="https://www.instapro.it" crossorigin>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="KROMATIKA + Colore&Calore — Milano" />
-  <meta property="og:description" content="Decoratori d'interni dal 1974. QSC: Qualità • Servizio • Convenienza. Milano • Trezzano sul Naviglio." />
+  <meta property="og:description" content="Decoratori d'interni dal 1974. QSC: Qualità • Servizio • Convenienza." />
   <meta property="og:image" content="assets/og-cover.webp" />
   <meta property="og:locale" content="it_IT" />
+  <meta property="og:url" content="https://kromatika-colorecalore.github.io/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KROMATIKA + Colore&Calore" />
+  <meta name="twitter:description" content="Decoratori d'interni dal 1974. QSC: Qualità • Servizio • Convenienza." />
+  <meta name="twitter:image" content="assets/og-cover.webp" />
 
   <link rel="preload" as="image" href="assets/hero.webp" />
   <link rel="stylesheet" href="style.css" />
@@ -29,7 +45,7 @@
     "@context":"https://schema.org",
     "@type":"LocalBusiness",
     "name":"KROMATIKA + Colore&Calore",
-    "description":"Tinteggiature e rifiniture d'interni dal 1974. QSC: Qualità, Servizio, Convenienza. Milano e Trezzano sul Naviglio.",
+    "description":"Tinteggiature e rifiniture d'interni dal 1974. QSC: Qualità, Servizio, Convenienza. Operativi su Milano e provincia con base a Trezzano sul Naviglio.",
     "areaServed":["Milano","Trezzano sul Naviglio","Provincia di Milano"],
     "address":{
       "@type":"PostalAddress",
@@ -40,7 +56,10 @@
     "telephone":["+39 3398602509","+39 3891012147"],
     "email":"colorecalore1974@gmail.com",
     "openingHours":["Mo-Fr 09:00-18:30","Sa 09:00-13:30"],
-    "sameAs":["https://www.facebook.com/colorecalore"]
+    "sameAs":[
+      "https://www.instapro.it/ditta/kromatika-di-maria-teresa-foddis",
+      "https://www.facebook.com/ColoreCalore"
+    ]
   }
   </script>
 </head>
@@ -49,13 +68,15 @@
   <a class="skip" href="#contenuto">Salta al contenuto</a>
 
   <!-- Header -->
-  <header class="header" data-header>
+  <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="KROMATIKA + Colore&Calore, vai all'inizio pagina">
-        <span class="brand__mark" aria-hidden="true">K</span>
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="" class="brand__logo"/>
+        </span>
         <span class="brand__text">
           <span class="brand__name">KROMATIKA</span>
-          <span class="brand__tag">+ Colore&Calore • Milano</span>
+          <span class="brand__tag">+ Colore&Calore</span>
         </span>
       </a>
 
@@ -66,9 +87,10 @@
         </button>
 
         <ul class="nav__list" id="menu">
-          <li><a href="#azienda">Azienda</a></li>
+          <li><a href="#azienda">Presentazione azienda</a></li>
           <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#lavori">Lavori</a></li>
+          <li><a href="#lavori">Galleria lavori</a></li>
+          <li><a href="#recensioni">Recensioni</a></li>
           <li><a href="#processo">Come lavoriamo</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a class="nav__cta" href="#contatti">Contatti</a></li>
@@ -79,7 +101,7 @@
 
   <main id="contenuto">
     <!-- Hero -->
-    <section id="top" class="hero">
+    <section id="top" class="hero" aria-label="Presentazione">
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="badge reveal">QSC: Qualità • Servizio • Convenienza</p>
@@ -87,41 +109,36 @@
           <h1 class="reveal">Decoratori d’interni a Milano dal 1974.</h1>
 
           <p class="lead reveal">
-            <strong>KROMATIKA + Colore&Calore</strong> — tre generazioni di imbianchini.
-            Tinteggiature, rifiniture ed effetti materici con attenzione a <strong>tempi certi</strong> e <strong>pulizia</strong>.
+            Tre generazioni di imbianchini: tinteggiature, rifiniture ed effetti materici con attenzione a tempi certi e pulizia.
           </p>
 
           <div class="hero__cta reveal">
-            <a class="btn btn--primary" href="tel:+393398602509">Chiama 339 860 2509</a>
+            <a class="btn btn--primary" href="#contatti">Contattaci</a>
             <a class="btn btn--ghost" href="#lavori">Vedi la galleria</a>
-
-            <!-- WhatsApp (click-to-chat) -->
             <a class="btn btn--ghost" target="_blank" rel="noopener"
                href="https://wa.me/393398602509?text=Buongiorno%2C%20vorrei%20un%20preventivo%20per%20tinteggiatura%20interni.%20Posso%20avere%20informazioni%3F">
-              WhatsApp
+              Scrivi su WhatsApp
             </a>
           </div>
 
-          <div class="hero__meta reveal" aria-label="Dati rapidi">
-            <div class="stat">
-              <span class="stat__k">Zona</span>
-              <span class="stat__v">Milano • Trezzano S/N</span>
-            </div>
+          <div class="hero__meta reveal" aria-label="Punti chiave">
             <div class="stat">
               <span class="stat__k">Esperienza</span>
               <span class="stat__v">Dal 1974</span>
             </div>
             <div class="stat">
-              <span class="stat__k">Impegno</span>
+              <span class="stat__k">Specialità</span>
+              <span class="stat__v">Effetti materici</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Standard</span>
               <span class="stat__v">Tempi & pulizia</span>
             </div>
           </div>
 
-          <div class="hero__contacts reveal" aria-label="Contatti rapidi">
-            <a class="chip" href="tel:+393398602509"><span aria-hidden="true">📞</span> 339 860 2509</a>
-            <a class="chip" href="tel:+393891012147"><span aria-hidden="true">📞</span> 389 101 2147</a>
-            <a class="chip" href="mailto:colorecalore1974@gmail.com"><span aria-hidden="true">✉️</span> colorecalore1974@gmail.com</a>
-          </div>
+          <p class="muted small reveal">
+            Preventivi accurati: consigliato sopralluogo. Tutti i contatti sono in fondo alla pagina.
+          </p>
         </div>
 
         <div class="hero__media reveal" aria-label="Foto lavori">
@@ -138,7 +155,7 @@
       </div>
     </section>
 
-    <!-- Trust / Brands -->
+    <!-- Marchi -->
     <section class="trust" aria-label="Marchi utilizzati">
       <div class="container trust__inner reveal">
         <p class="trust__title">Prodotti utilizzati (garanzia di altissima qualità)</p>
@@ -163,49 +180,34 @@
 
           <div class="prose">
             <p>
-              Siamo alla <strong>terza generazione</strong> di decoratori d’interni. I nostri collaboratori uniscono anni di esperienza
-              a tecniche pittoriche moderne.
+              Siamo alla <strong>terza generazione</strong> di decoratori d’interni.
+              I nostri collaboratori uniscono anni di esperienza a tecniche pittoriche moderne.
             </p>
             <p>
-              Ci differenziamo per <strong>organizzazione</strong>, <strong>rispetto dei tempi</strong> e <strong>pulizia</strong>.
+              Ci differenziamo per organizzazione, rispetto dei tempi e pulizia.
               Materiali di qualità e corretta applicazione sono la nostra prima garanzia, con assistenza post-lavoro se necessaria.
             </p>
           </div>
 
-          <div class="pillRow" aria-label="Dati aziendali">
-            <span class="pill">Trezzano S/N (MI)</span>
+          <div class="pillRow" aria-label="Info aziendali">
+            <span class="pill">Milano & provincia</span>
+            <span class="pill">Base: Trezzano sul Naviglio (MI)</span>
             <span class="pill">Registro Imprese Milano</span>
-            <span class="pill">Dal 1974</span>
           </div>
 
           <div class="callout">
             <h3 class="callout__title">Collaborazioni</h3>
             <p class="muted">
               Parquet • Impianti elettrici • Impianti allarme • Cartongesso e muratura • Condizionamento.
-              Collaborazioni consolidate per offrire un servizio completo.
             </p>
           </div>
         </div>
 
-        <aside class="infoBox reveal" aria-label="Orari e contatti">
-          <h3>Orari d’ufficio</h3>
-          <ul class="hours">
-            <li><span>Lun – Ven</span><strong>09:00 – 18:30</strong></li>
-            <li><span>Sab</span><strong>09:00 – 13:30</strong></li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <h3>Contatti</h3>
-          <div class="stack">
-            <a class="btn btn--primary btn--full" href="tel:+393398602509">Chiama 339 860 2509</a>
-            <a class="btn btn--ghost btn--full" href="tel:+393891012147">Chiama 389 101 2147</a>
-            <a class="btn btn--ghost btn--full" href="mailto:colorecalore1974@gmail.com">Invia email</a>
-          </div>
-
-          <p class="muted small" style="margin-top:12px">
-            Preferiamo il sopralluogo: consente un preventivo più accurato.
-          </p>
+        <aside class="infoBox reveal" aria-label="Slogan">
+          <h3>Il nostro slogan</h3>
+          <p class="muted" style="margin:0 0 10px">Siamo fedeli al nostro stile:</p>
+          <p class="bigStrong">QUALITÀ • SERVIZIO • CONVENIENZA</p>
+          <p class="muted small" style="margin:10px 0 0">KROMATIKA + Colore&Calore… colora le vostre vite.</p>
         </aside>
       </div>
     </section>
@@ -243,7 +245,7 @@
 
           <article class="card reveal">
             <h3>Verniciature & termoisolanti</h3>
-            <p>Applicazione corretta e prodotti selezionati: Sikkens, Lechler, Sigma, Oikos, Graesan.</p>
+            <p>Applicazione corretta e prodotti selezionati per durata e resa.</p>
             <ul class="mini">
               <li>Alta qualità</li>
               <li>Durata nel tempo</li>
@@ -251,94 +253,222 @@
             </ul>
           </article>
         </div>
-
-        <div class="ctaBand reveal">
-          <div>
-            <h3>Preventivo preciso</h3>
-            <p class="muted">
-              Per un preventivo dettagliato servono: metri quadrati, numero locali e stato di mantenimento.
-              Il sopralluogo è consigliato.
-            </p>
-          </div>
-          <a class="btn btn--primary" href="#contatti">Richiedi informazioni</a>
-        </div>
       </div>
     </section>
 
-    <!-- Galleria -->
+    <!-- ✅ Galleria slider (mostra 6, ma ne puoi avere 19) -->
     <section id="lavori" class="section section--alt">
       <div class="container">
         <div class="sectionHead reveal">
           <h2>Galleria lavori</h2>
-          <p class="section__lead">Clicca sulle foto per ingrandire (lightbox).</p>
+          <p class="section__lead">Mostra 6 immagini alla volta. Usa le frecce per scorrere. Clicca una foto per aprirla a schermo intero.</p>
         </div>
 
-        <div class="gallery" aria-label="Galleria fotografica">
-          <a class="shot reveal" href="assets/lavoro1.webp" data-caption="Lavoro 1 — Tinteggiatura interni">
-            <img src="assets/lavoro1.webp" alt="Lavoro 1: tinteggiatura interni" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
-          <a class="shot reveal" href="assets/lavoro2.webp" data-caption="Lavoro 2 — Parete decorativa">
-            <img src="assets/lavoro2.webp" alt="Lavoro 2: parete decorativa" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
-          <a class="shot reveal" href="assets/lavoro3.webp" data-caption="Lavoro 3 — Rifiniture">
-            <img src="assets/lavoro3.webp" alt="Lavoro 3: rifiniture" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
-          <a class="shot reveal" href="assets/lavoro4.webp" data-caption="Lavoro 4 — Verniciatura">
-            <img src="assets/lavoro4.webp" alt="Lavoro 4: verniciatura" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
-          <a class="shot reveal" href="assets/lavoro5.webp" data-caption="Lavoro 5 — Interni luminosi">
-            <img src="assets/lavoro5.webp" alt="Lavoro 5: interni luminosi" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
-          <a class="shot reveal" href="assets/lavoro6.webp" data-caption="Lavoro 6 — Finitura moderna">
-            <img src="assets/lavoro6.webp" alt="Lavoro 6: finitura moderna" width="900" height="900" loading="lazy" decoding="async" />
-          </a>
+        <div class="galleryShell reveal" aria-label="Slider galleria lavori">
+          <button class="galleryNav galleryNav--prev" type="button" aria-label="Immagini precedenti" aria-disabled="true">‹</button>
+
+          <div class="galleryViewport">
+            <div class="galleryTrack" id="galleryTrack">
+              <!-- ✅ 19 immagini: rinominale se serve -->
+              <a class="shot" href="assets/lavoro1.webp"><img src="assets/lavoro1.webp" alt="Lavoro 1" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro2.webp"><img src="assets/lavoro2.webp" alt="Lavoro 2" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro3.webp"><img src="assets/lavoro3.webp" alt="Lavoro 3" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro4.webp"><img src="assets/lavoro4.webp" alt="Lavoro 4" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro5.webp"><img src="assets/lavoro5.webp" alt="Lavoro 5" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro6.webp"><img src="assets/lavoro6.webp" alt="Lavoro 6" width="900" height="900" loading="lazy" decoding="async" /></a>
+
+              <a class="shot" href="assets/lavoro7.webp"><img src="assets/lavoro7.webp" alt="Lavoro 7" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro8.webp"><img src="assets/lavoro8.webp" alt="Lavoro 8" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro9.webp"><img src="assets/lavoro9.webp" alt="Lavoro 9" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro10.webp"><img src="assets/lavoro10.webp" alt="Lavoro 10" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro11.webp"><img src="assets/lavoro11.webp" alt="Lavoro 11" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro12.webp"><img src="assets/lavoro12.webp" alt="Lavoro 12" width="900" height="900" loading="lazy" decoding="async" /></a>
+
+              <a class="shot" href="assets/lavoro13.webp"><img src="assets/lavoro13.webp" alt="Lavoro 13" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro14.webp"><img src="assets/lavoro14.webp" alt="Lavoro 14" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro15.webp"><img src="assets/lavoro15.webp" alt="Lavoro 15" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro16.webp"><img src="assets/lavoro16.webp" alt="Lavoro 16" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro17.webp"><img src="assets/lavoro17.webp" alt="Lavoro 17" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro18.webp"><img src="assets/lavoro18.webp" alt="Lavoro 18" width="900" height="900" loading="lazy" decoding="async" /></a>
+              <a class="shot" href="assets/lavoro19.webp"><img src="assets/lavoro19.webp" alt="Lavoro 19" width="900" height="900" loading="lazy" decoding="async" /></a>
+            </div>
+          </div>
+
+          <button class="galleryNav galleryNav--next" type="button" aria-label="Immagini successive">›</button>
         </div>
 
+        <!-- Lightbox -->
         <dialog class="lightbox" id="lightbox" aria-label="Anteprima immagine">
           <button class="lightbox__close" type="button" aria-label="Chiudi">×</button>
+          <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Immagine precedente">‹</button>
+          <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Immagine successiva">›</button>
           <figure class="lightbox__figure">
             <img class="lightbox__img" alt="" />
-            <figcaption class="lightbox__cap muted"></figcaption>
+            <figcaption class="lightbox__cap muted" aria-live="polite"></figcaption>
           </figure>
         </dialog>
       </div>
     </section>
 
-    <!-- Processo -->
-    <section id="processo" class="section">
+    <!-- Recensioni slider -->
+    <section id="recensioni" class="section">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>Recensioni</h2>
+          <p class="section__lead">Recensioni reali (Instapro). Mostra 3 recensioni alla volta, scorri con le frecce.</p>
+        </div>
+
+        <div class="reviewsShell reveal">
+          <button class="reviewsNav reviewsNav--prev" type="button" aria-label="Recensioni precedenti" aria-disabled="true">‹</button>
+
+          <div class="reviewsViewport" aria-label="Slider recensioni">
+            <div class="reviewsTrack" id="reviewsTrack">
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Utente Instapro da Milano</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 13 gen 2026</div>
+                <div class="reviewJob">Posa carta da parati: 25 m²; Posa</div>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Alice Garlaschelli, Lacchiarella</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 15 mar 2023</div>
+                <div class="reviewJob">Posa carta da parati: 12 m²; Posa</div>
+
+                <!-- ✅ Contenitore immagine SOLO per questa recensione -->
+                <div class="reviewMedia" aria-label="Foto recensione (opzionale)">
+                  <img src="assets/review-alice.webp" alt="Foto lavoro collegato alla recensione" loading="lazy" decoding="async"
+                       onerror="this.style.display='none'; this.parentElement.classList.add('is-empty');">
+                </div>
+
+                <p class="reviewText">
+                  Ottimo lavoro! Precisi, lasciano tutto in ordine, senza sporcare. Peccato non averlo conosciuti prima.
+                  E soprattutto, che al giorno d’oggi non è scontato, onesti anche nel prezzo!
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Utente Instapro da Pieve Emanuele</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 8 dic 2022</div>
+                <div class="reviewJob">Tinteggiatura interna: 70 m² pareti; 50 m² soffitti; Intero locale</div>
+                <p class="reviewText">
+                  Una coppia (in tutti i sensi) di professionisti onesti, disponibili e competenti. Hanno esaudito le mie richieste
+                  e risolto criticità presentatesi in corso d'opera. Consigliati assolutamente.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Sonia, Milano</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 4 mar 2020</div>
+                <div class="reviewJob">Tinteggiatura interna: 160 mq pareti; 80 mq soffitti</div>
+                <p class="reviewText">
+                  Professionalità e simpatia. Molto precisi, puntuali e puliti, ottimi consigli su colori e materiali. Risultato finale eccellente.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Luca, Milano</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 18 gen 2019</div>
+                <div class="reviewJob">Tinteggiatura interna: Pareti</div>
+                <p class="reviewText">
+                  Stuccatura e tinteggiatura eseguite molto bene. Apprezzata professionalità e intraprendenza, con consigli utili anche su altri dettagli in casa.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Francesco</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 13 dic 2018 (mod. 14 dic 2018)</div>
+                <div class="reviewJob">Imbiancatura scale condominio e più appartamenti</div>
+                <p class="reviewText">
+                  Lavori svolti nei tempi richiesti con massima pulizia. Dopo abbiamo fatto imbiancare anche altri appartamenti in famiglia. Consigliatissimi.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Roberto</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 13 dic 2018 (mod. 14 dic 2018)</div>
+                <div class="reviewJob">Imbiancatura di 2 appartamenti</div>
+                <p class="reviewText">
+                  Hanno risolto diversi problemi con esperienza e prodotti di qualità. Quando finiscono, lasciano i locali più puliti di come li hanno trovati.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Roberta &amp; Michele</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 16 gen 2018</div>
+                <div class="reviewJob">Tinteggiatura casa</div>
+                <p class="reviewText">
+                  Lavoro eseguito alla perfezione. Tempi rispettati, pulizia, precisione e cura dei particolari. Anche umanamente ci siamo trovati benissimo.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Daniel e Veronica</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 18 dic 2017 (mod. 29 dic 2017)</div>
+                <div class="reviewJob">Tinteggiatura appartamento</div>
+                <p class="reviewText">
+                  Fedele al suo slogan: qualità, servizio e convenienza. Consigli su pareti colorate che hanno valorizzato l’arredamento. Serio e pulitissimo.
+                </p>
+              </article>
+
+              <article class="reviewSlide">
+                <div class="reviewTop"><strong>Angelica</strong><span class="reviewStars" aria-label="Valutazione 5 su 5">★★★★★</span></div>
+                <div class="reviewMeta">Recensito: 18 dic 2017 (mod. 29 dic 2017)</div>
+                <div class="reviewJob">Tinteggiatura appartamento</div>
+                <p class="reviewText">
+                  Preciso, ordinato e puntuale. Rispetto totale della casa (non una goccia di vernice). Ha portato colore nella nostra casa!
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <button class="reviewsNav reviewsNav--next" type="button" aria-label="Recensioni successive">›</button>
+        </div>
+
+        <div class="ctaBand reveal">
+          <div>
+            <h3>Vuoi un preventivo?</h3>
+            <p class="muted">Scrivici su WhatsApp o via email: rispondiamo rapidamente.</p>
+          </div>
+          <a class="btn btn--primary" href="#contatti">Vai ai contatti</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodo -->
+    <section id="processo" class="section section--alt">
       <div class="container">
         <div class="sectionHead reveal">
           <h2>Come lavoriamo</h2>
-          <p class="section__lead">Un metodo chiaro: preventivo accurato, tempi certi, consegna pulita.</p>
+          <p class="section__lead">Metodo chiaro: preventivo accurato, tempi certi, consegna pulita.</p>
         </div>
 
         <div class="steps">
           <div class="step reveal">
             <div class="step__n" aria-hidden="true">1</div>
             <h3>Sopralluogo</h3>
-            <p class="muted">Valutiamo superfici, stato di mantenimento e soluzione migliore.</p>
+            <p class="muted">Valutiamo superfici e soluzione migliore.</p>
           </div>
           <div class="step reveal">
             <div class="step__n" aria-hidden="true">2</div>
             <h3>Preventivo</h3>
-            <p class="muted">Chiaro e dettagliato: materiali, lavorazioni e tempistiche.</p>
+            <p class="muted">Chiaro: materiali, lavorazioni e tempistiche.</p>
           </div>
           <div class="step reveal">
             <div class="step__n" aria-hidden="true">3</div>
             <h3>Esecuzione</h3>
-            <p class="muted">Protezione, lavorazione precisa e rispetto dei tempi concordati.</p>
+            <p class="muted">Protezione e lavorazione precisa.</p>
           </div>
           <div class="step reveal">
             <div class="step__n" aria-hidden="true">4</div>
             <h3>Consegna pulita</h3>
-            <p class="muted">Lasciamo tutto ordinato. Assistenza post-lavoro se necessaria.</p>
+            <p class="muted">Ordine e assistenza post-lavoro se necessaria.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section section--alt">
+    <section id="faq" class="section">
       <div class="container">
         <div class="sectionHead reveal">
           <h2>FAQ</h2>
@@ -353,106 +483,98 @@
 
           <details class="faq__item reveal">
             <summary>Quali sono i dubbi più frequenti?</summary>
-            <div class="faq__content"><p>Durata dei lavori e pulizia: diamo sempre una tempistica precisa e lasciamo tutto completamente pulito.</p></div>
+            <div class="faq__content"><p>Durata dei lavori e pulizia: diamo tempistiche precise e lasciamo tutto completamente pulito.</p></div>
           </details>
 
           <details class="faq__item reveal">
             <summary>Di quali dati avete bisogno per un preventivo dettagliato?</summary>
-            <div class="faq__content"><p>Metri quadrati, numero locali e stato di mantenimento. Preferiamo il sopralluogo per un preventivo più accurato.</p></div>
+            <div class="faq__content"><p>Metri quadrati, numero locali e stato di mantenimento. Il sopralluogo è consigliato.</p></div>
           </details>
 
           <details class="faq__item reveal">
             <summary>Quali garanzie offrite?</summary>
-            <div class="faq__content"><p>I materiali e l’esperienza sono garanzia di ottimi risultati. Inoltre offriamo assistenza post-lavoro se necessario.</p></div>
+            <div class="faq__content"><p>Materiali ed esperienza sono garanzia di ottimi risultati; assistenza post-lavoro se necessario.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Contatti + Social -->
-    <section id="contatti" class="section">
-      <div class="container split">
-        <div class="reveal">
-          <h2>Contatti diretti</h2>
-          <p class="section__lead">Milano • Trezzano sul Naviglio (MI) — Registro Imprese Milano</p>
-
-          <div class="contactGrid">
-            <div class="contactCard">
-              <h3>Telefono</h3>
-              <a class="contactLink" href="tel:+393398602509">339 860 2509</a>
-              <a class="contactLink" href="tel:+393891012147">389 101 2147</a>
-              <p class="muted small">Orari: Lun–Ven 09:00–18:30 • Sab 09:00–13:30</p>
-            </div>
-
-            <div class="contactCard">
-              <h3>Email</h3>
-              <a class="contactLink" href="mailto:colorecalore1974@gmail.com">colorecalore1974@gmail.com</a>
-              <p class="muted small">P. IVA 10227780961</p>
-            </div>
-          </div>
-
-          <div class="social" aria-label="Social aziendali">
-            <h3>Social</h3>
-            <div class="social__row">
-              <a class="social__btn" href="https://www.facebook.com/colorecalore" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-                <span>Facebook</span>
-              </a>
-            </div>
-          </div>
+    <!-- Contatti -->
+    <section id="contatti" class="section section--alt">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>Contatti</h2>
+          <p class="section__lead">Scrivici via email o WhatsApp: è il modo più veloce.</p>
         </div>
 
-        <aside class="formBox reveal" aria-label="Richiesta informazioni">
-          <h3>Richiedi informazioni</h3>
-          <p class="muted small">Modulo statico (mostra conferma). Per invio reale su GitHub Pages possiamo usare Formspree.</p>
+        <div class="contactActions reveal">
+          <a class="btn btn--primary" target="_blank" rel="noopener"
+             href="https://wa.me/393398602509?text=Buongiorno%2C%20vorrei%20un%20preventivo%20per%20tinteggiatura%20interni.%20Posso%20avere%20informazioni%3F">
+            WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="mailto:colorecalore1974@gmail.com?subject=Richiesta%20informazioni%20-%20KROMATIKA%20%2B%20Colore%26Calore">
+            Invia Email
+          </a>
+        </div>
 
-          <form id="contactForm" class="form">
-            <label>Nome
-              <input name="nome" autocomplete="name" required />
-            </label>
-
-            <label>Telefono o Email
-              <input name="contatto" autocomplete="email" required />
-            </label>
-
-            <label>Messaggio
-              <textarea name="messaggio" rows="5" required></textarea>
-            </label>
-
-            <button class="btn btn--primary btn--full" type="submit">Invia</button>
-            <p class="muted small" id="formMsg" role="status" aria-live="polite"></p>
-          </form>
-        </aside>
+        <p class="muted small reveal" style="margin-top:10px">
+          Tutti i recapiti completi, orari e social sono nel footer qui sotto.
+        </p>
       </div>
     </section>
   </main>
 
+  <!-- ✅ Footer (logo + scritta rimossi, come richiesto) -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <strong>KROMATIKA</strong>
-        <span class="muted">+ Colore&Calore</span>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h3 class="footer__h">Contatti</h3>
+          <a class="footer__link" href="tel:+393398602509">Tel. 339 860 2509</a>
+          <a class="footer__link" href="tel:+393891012147">Tel. 389 101 2147</a>
+          <a class="footer__link" href="mailto:colorecalore1974@gmail.com">colorecalore1974@gmail.com</a>
+          <a class="footer__link" target="_blank" rel="noopener"
+             href="https://wa.me/393398602509?text=Buongiorno%2C%20vorrei%20un%20preventivo%20per%20tinteggiatura%20interni.%20Posso%20avere%20informazioni%3F">
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__h">Orari</h3>
+          <div class="footer__text">Lun–Ven: <strong>09:00–18:30</strong></div>
+          <div class="footer__text">Sab: <strong>09:00–13:30</strong></div>
+          <div class="footer__text muted small" style="margin-top:8px">
+            Preferiamo il sopralluogo: consente un preventivo più accurato.
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__h">Dati aziendali</h3>
+          <div class="footer__text">Milano • Trezzano sul Naviglio (MI)</div>
+          <div class="footer__text">Registro Imprese Milano</div>
+          <div class="footer__text">P. IVA 10227780961</div>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__h">Social</h3>
+          <a class="footer__link" target="_blank" rel="noopener"
+             href="https://www.instapro.it/ditta/kromatika-di-maria-teresa-foddis">Instapro</a>
+          <a class="footer__link" target="_blank" rel="noopener"
+             href="https://www.facebook.com/ColoreCalore">Facebook</a>
+        </div>
       </div>
 
-      <div class="footer__links">
-        <a href="#azienda">Azienda</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#lavori">Lavori</a>
-        <a href="#contatti">Contatti</a>
-      </div>
-
-      <div class="footer__copy muted small">
-        © <span id="year"></span> KROMATIKA + Colore&Calore — Milano • Trezzano S/N (MI)
+      <div class="footer__bottom">
+        <div class="muted small">© <span id="year"></span> KROMATIKA + Colore&Calore</div>
       </div>
     </div>
   </footer>
 
-  <!-- JS: menu mobile + lightbox + reveal on scroll + form -->
   <script>
-    // anno footer
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // menu mobile
+    // Menu mobile
     const btn = document.querySelector(".nav__toggle");
     const menu = document.querySelector(".nav__list");
     if (btn && menu) {
@@ -468,50 +590,163 @@
       });
     }
 
-    // lightbox (dialog)
-    const dlg = document.getElementById("lightbox");
-    const dlgImg = dlg ? dlg.querySelector(".lightbox__img") : null;
-    const dlgCap = dlg ? dlg.querySelector(".lightbox__cap") : null;
-
-    document.querySelectorAll(".shot").forEach((a) => {
-      a.addEventListener("click", (ev) => {
-        ev.preventDefault();
-        if (!dlg || !dlgImg) return;
-        dlgImg.src = a.getAttribute("href");
-        dlgImg.alt = a.querySelector("img")?.alt || "Immagine lavoro";
-        if (dlgCap) dlgCap.textContent = a.dataset.caption || "";
-        dlg.showModal();
-      });
-    });
-
-    document.querySelector(".lightbox__close")?.addEventListener("click", () => dlg?.close());
-    dlg?.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
-
-    // reveal on scroll (rispetta prefers-reduced-motion)
+    // Reveal (rispetta reduce motion)
     const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!prefersReduced) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((en) => {
-          if (en.isIntersecting) {
-            en.target.classList.add("is-in");
-            io.unobserve(en.target);
-          }
+          if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
         });
       }, { threshold: 0.14 });
-
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     } else {
       document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
     }
 
-    // form statico
-    const form = document.getElementById("contactForm");
-    const msg = document.getElementById("formMsg");
-    form?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (msg) msg.textContent = "Messaggio pronto ✅ (per invio reale: Formspree/Netlify)";
-      form.reset();
+    // ✅ Gallery slider: 6 visibili su desktop
+    const gTrack = document.getElementById("galleryTrack");
+    const gPrev = document.querySelector(".galleryNav--prev");
+    const gNext = document.querySelector(".galleryNav--next");
+
+    if (gTrack && gPrev && gNext) {
+      const gItems = Array.from(gTrack.querySelectorAll(".shot"));
+      let gIndex = 0;
+
+      const gPerView = () => {
+        if (window.matchMedia("(max-width: 720px)").matches) return 1;
+        if (window.matchMedia("(max-width: 980px)").matches) return 2;
+        return 6;
+      };
+
+      function gMaxIndex() {
+        const pv = gPerView();
+        return Math.max(0, gItems.length - pv);
+      }
+
+      function setVisible(btnEl, visible) {
+        btnEl.style.opacity = visible ? "1" : "0";
+        btnEl.style.pointerEvents = visible ? "auto" : "none";
+        btnEl.setAttribute("aria-hidden", visible ? "false" : "true");
+      }
+
+      function gUpdateNav() {
+        const m = gMaxIndex();
+        setVisible(gPrev, gIndex > 0);
+        setVisible(gNext, gIndex < m);
+        gPrev.setAttribute("aria-disabled", gIndex > 0 ? "false" : "true");
+        gNext.setAttribute("aria-disabled", gIndex < m ? "false" : "true");
+      }
+
+      function gSetIndex(i) {
+        const m = gMaxIndex();
+        gIndex = Math.min(Math.max(i, 0), m);
+
+        const gap = parseFloat(getComputedStyle(gTrack).gap || "0");
+        const slideW = gItems[0].getBoundingClientRect().width;
+        const x = (slideW + gap) * gIndex;
+
+        gTrack.style.transform = `translateX(-${x}px)`;
+        gUpdateNav();
+      }
+
+      gPrev.addEventListener("click", () => gSetIndex(gIndex - 1));
+      gNext.addEventListener("click", () => gSetIndex(gIndex + 1));
+      window.addEventListener("resize", () => gSetIndex(gIndex));
+      gSetIndex(0);
+    }
+
+    // ✅ Lightbox: frecce + tastiera (usa tutte le immagini della galleria)
+    const dlg = document.getElementById("lightbox");
+    const dlgImg = dlg ? dlg.querySelector(".lightbox__img") : null;
+    const dlgCap = dlg ? dlg.querySelector(".lightbox__cap") : null;
+    const prevBtn = dlg ? dlg.querySelector(".lightbox__nav--prev") : null;
+    const nextBtn = dlg ? dlg.querySelector(".lightbox__nav--next") : null;
+    const closeBtn = dlg ? dlg.querySelector(".lightbox__close") : null;
+
+    const shots = Array.from(document.querySelectorAll("#galleryTrack .shot"));
+    const items = shots.map((a, i) => ({
+      href: a.getAttribute("href"),
+      alt: a.querySelector("img")?.alt || `Lavoro ${i + 1}`
+    }));
+
+    let current = 0;
+
+    function showAt(index) {
+      if (!dlg || !dlgImg) return;
+      const len = items.length;
+      current = (index + len) % len;
+      dlgImg.src = items[current].href;
+      dlgImg.alt = items[current].alt;
+      if (dlgCap) dlgCap.textContent = `${current + 1} / ${len}`;
+    }
+
+    shots.forEach((a, idx) => {
+      a.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        showAt(idx);
+        dlg.showModal();
+      });
     });
+
+    prevBtn?.addEventListener("click", () => showAt(current - 1));
+    nextBtn?.addEventListener("click", () => showAt(current + 1));
+    closeBtn?.addEventListener("click", () => dlg?.close());
+    dlg?.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+    document.addEventListener("keydown", (e) => {
+      if (!dlg || !dlg.open) return;
+      if (e.key === "Escape") dlg.close();
+      if (e.key === "ArrowLeft") showAt(current - 1);
+      if (e.key === "ArrowRight") showAt(current + 1);
+    });
+
+    // ✅ Reviews slider: 3 visibili su desktop, frecce esterne, indietro visibile solo dopo avanzamento
+    const rTrack = document.getElementById("reviewsTrack");
+    const rPrev = document.querySelector(".reviewsNav--prev");
+    const rNext = document.querySelector(".reviewsNav--next");
+
+    if (rTrack && rPrev && rNext) {
+      const slides = Array.from(rTrack.querySelectorAll(".reviewSlide"));
+      let rIndex = 0;
+
+      const rPerView = () => (window.matchMedia("(max-width: 980px)").matches ? 1 : 3);
+
+      function rMaxIndex() {
+        const pv = rPerView();
+        return Math.max(0, slides.length - pv);
+      }
+
+      function setVisible(btnEl, visible) {
+        btnEl.style.opacity = visible ? "1" : "0";
+        btnEl.style.pointerEvents = visible ? "auto" : "none";
+        btnEl.setAttribute("aria-hidden", visible ? "false" : "true");
+      }
+
+      function rUpdateNav() {
+        const m = rMaxIndex();
+        setVisible(rPrev, rIndex > 0);
+        setVisible(rNext, rIndex < m);
+        rPrev.setAttribute("aria-disabled", rIndex > 0 ? "false" : "true");
+        rNext.setAttribute("aria-disabled", rIndex < m ? "false" : "true");
+      }
+
+      function rSetIndex(i) {
+        const m = rMaxIndex();
+        rIndex = Math.min(Math.max(i, 0), m);
+
+        const gap = parseFloat(getComputedStyle(rTrack).gap || "0");
+        const slideW = slides[0].getBoundingClientRect().width;
+        const x = (slideW + gap) * rIndex;
+
+        rTrack.style.transform = `translateX(-${x}px)`;
+        rUpdateNav();
+      }
+
+      rPrev.addEventListener("click", () => rSetIndex(rIndex - 1));
+      rNext.addEventListener("click", () => rSetIndex(rIndex + 1));
+      window.addEventListener("resize", () => rSetIndex(rIndex));
+      rSetIndex(0);
+    }
   </script>
 </body>
 </html>
