@@ -773,7 +773,7 @@ button {
   will-change: transform;
 }
 
-/* ✅ DESKTOP: 4 per view (più grandi) */
+/* Desktop: 4 per view (più grande). Mobile/tablet restano gestiti sotto nei media query */
 .galleryTrack .shot {
   flex: 0 0 calc((100% - (14px * 3)) / 4);
   border-radius: 22px;
@@ -1593,6 +1593,14 @@ body.lb-lock {
 
   .reviewSlide {
     flex: 0 0 100%;
+  }
+
+  /* ✅ MOBILE/TABLET: testo recensioni completo (niente clamp) */
+  .reviewText {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
   }
 }
 
