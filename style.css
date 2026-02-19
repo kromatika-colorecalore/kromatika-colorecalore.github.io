@@ -1,4 +1,4 @@
-/* style.css (COMPLETO, 2026) */
+/* style.css (COMPLETO, 2026) — FIX recensioni mobile (no taglio) */
 :root {
   --brand1: 255 45 45;
   --brand2: 255 107 0;
@@ -773,7 +773,7 @@ button {
   will-change: transform;
 }
 
-/* Desktop: 4 per view (più grande). Mobile/tablet restano gestiti sotto nei media query */
+/* ✅ DESKTOP: 4 per view (più grandi) */
 .galleryTrack .shot {
   flex: 0 0 calc((100% - (14px * 3)) / 4);
   border-radius: 22px;
@@ -946,7 +946,7 @@ button {
 }
 
 /* =========================
-   REVIEWS (2026 premium)
+   REVIEWS (2026 premium) — FIX
    ========================= */
 
 .reviewsShell {
@@ -959,7 +959,7 @@ button {
 }
 
 .reviewsViewport {
-  overflow: hidden;
+  overflow: hidden; /* slider */
   border-radius: var(--radius2);
   background: transparent;
   padding: 0;
@@ -981,7 +981,7 @@ button {
   border-radius: 24px;
 
   padding: 16px;
-  min-height: 190px;
+  min-height: unset;
 
   box-shadow: 0 18px 60px rgb(0 0 0 / 0.24);
 
@@ -1006,6 +1006,7 @@ button {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 6px;
+  min-width: 0;
 }
 
 .reviewStars {
@@ -1018,6 +1019,7 @@ button {
 .reviewMeta {
   color: rgb(var(--muted));
   font-size: 13px;
+  flex: 0 0 auto;
 }
 
 .reviewJob {
@@ -1034,10 +1036,12 @@ button {
   border-top: 1px solid rgb(255 255 255 / 0.10);
   padding-top: 12px;
 
+  /* desktop clamp */
   display: -webkit-box;
-  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reviewText::before {
@@ -1591,11 +1595,12 @@ body.lb-lock {
     flex: 0 0 calc((100% - 14px) / 2);
   }
 
+  /* recensioni: 1 slide per view */
   .reviewSlide {
     flex: 0 0 100%;
   }
 
-  /* ✅ MOBILE/TABLET: testo recensioni completo (niente clamp) */
+  /* ✅ MOBILE: non troncare il testo */
   .reviewText {
     display: block;
     -webkit-line-clamp: unset;
