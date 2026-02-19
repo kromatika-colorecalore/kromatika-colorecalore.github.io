@@ -604,6 +604,21 @@
       document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
     }
 
+    // ✅ FIX ARIA: non usare aria-hidden su bottoni interattivi.
+    // Manteniamo lo spazio del layout ma togliamo focus/click/screen reader quando "nascosti".
+    function setNavVisible(btnEl, visible) {
+      btnEl.style.visibility = visible ? "visible" : "hidden";
+      btnEl.style.pointerEvents = visible ? "auto" : "none";
+      btnEl.style.opacity = visible ? "1" : "0";
+
+      btnEl.disabled = !visible;
+      btnEl.tabIndex = visible ? 0 : -1;
+      btnEl.setAttribute("aria-disabled", visible ? "false" : "true");
+
+      // IMPORTANTISSIMO: mai aria-hidden sui controlli (Lighthouse warning)
+      btnEl.removeAttribute("aria-hidden");
+    }
+
     // ✅ Gallery slider: 6 visibili su desktop
     const gTrack = document.getElementById("galleryTrack");
     const gPrev = document.querySelector(".galleryNav--prev");
@@ -624,18 +639,10 @@
         return Math.max(0, gItems.length - pv);
       }
 
-      function setVisible(btnEl, visible) {
-        btnEl.style.opacity = visible ? "1" : "0";
-        btnEl.style.pointerEvents = visible ? "auto" : "none";
-        btnEl.setAttribute("aria-hidden", visible ? "false" : "true");
-      }
-
       function gUpdateNav() {
         const m = gMaxIndex();
-        setVisible(gPrev, gIndex > 0);
-        setVisible(gNext, gIndex < m);
-        gPrev.setAttribute("aria-disabled", gIndex > 0 ? "false" : "true");
-        gNext.setAttribute("aria-disabled", gIndex < m ? "false" : "true");
+        setNavVisible(gPrev, gIndex > 0);
+        setNavVisible(gNext, gIndex < m);
       }
 
       function gSetIndex(i) {
@@ -701,7 +708,7 @@
       if (e.key === "ArrowRight") showAt(current + 1);
     });
 
-    // ✅ Reviews slider: 3 visibili su desktop, frecce esterne, indietro visibile solo dopo avanzamento
+    // ✅ Reviews slider: 3 visibili su desktop
     const rTrack = document.getElementById("reviewsTrack");
     const rPrev = document.querySelector(".reviewsNav--prev");
     const rNext = document.querySelector(".reviewsNav--next");
@@ -717,18 +724,10 @@
         return Math.max(0, slides.length - pv);
       }
 
-      function setVisible(btnEl, visible) {
-        btnEl.style.opacity = visible ? "1" : "0";
-        btnEl.style.pointerEvents = visible ? "auto" : "none";
-        btnEl.setAttribute("aria-hidden", visible ? "false" : "true");
-      }
-
       function rUpdateNav() {
         const m = rMaxIndex();
-        setVisible(rPrev, rIndex > 0);
-        setVisible(rNext, rIndex < m);
-        rPrev.setAttribute("aria-disabled", rIndex > 0 ? "false" : "true");
-        rNext.setAttribute("aria-disabled", rIndex < m ? "false" : "true");
+        setNavVisible(rPrev, rIndex > 0);
+        setNavVisible(rNext, rIndex < m);
       }
 
       function rSetIndex(i) {
@@ -751,4 +750,3 @@
   </script>
 </body>
 </html>
-
