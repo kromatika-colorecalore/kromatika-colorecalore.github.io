@@ -1,4 +1,3 @@
-/* style.css (COMPLETO, 2026) — FIX recensioni mobile (no taglio) */
 :root {
   --brand1: 255 45 45;
   --brand2: 255 107 0;
@@ -26,7 +25,6 @@
   --a-panel2: 0.035;
   --a-border: 0.1;
 
-  /* 2026 skin extras */
   --a-glow1: 0.18;
   --a-glow2: 0.16;
   --a-glass: 0.60;
@@ -71,6 +69,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: 78px;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -94,6 +93,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+  position: relative;
 }
 
 ::selection {
@@ -144,10 +146,6 @@ button {
   white-space: nowrap;
   border: 0;
 }
-
-/* =========================
-   HEADER (2026 glass)
-   ========================= */
 
 .header {
   position: sticky;
@@ -324,9 +322,51 @@ button {
   filter: brightness(1.03);
 }
 
-/* =========================
-   Reveal
-   ========================= */
+@media (max-width: 1180px) {
+  .nav__toggle {
+    display: inline-flex;
+  }
+
+  .nav__list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 56px;
+
+    background: rgb(var(--bg) / 0.95);
+    border: 1px solid rgb(var(--border) / 0.12);
+    border-radius: var(--radius2);
+    padding: 10px;
+    min-width: 260px;
+
+    flex-direction: column;
+    gap: 6px;
+
+    box-shadow: var(--shadow2);
+    backdrop-filter: blur(12px);
+  }
+
+  @supports (background: color-mix(in srgb, #000 50%, #000)) {
+    .nav__list {
+      background: color-mix(in srgb, rgb(var(--bg)) 95%, rgb(0 0 0));
+    }
+  }
+
+  .nav__list.is-open {
+    display: flex;
+  }
+
+  .nav__list a {
+    width: 100%;
+    padding: 12px;
+    white-space: normal;
+  }
+
+  .nav__list .nav__cta {
+    width: fit-content;
+    padding: 10px 14px;
+  }
+}
 
 .reveal {
   opacity: 0;
@@ -347,10 +387,6 @@ button {
     transition: none;
   }
 }
-
-/* =========================
-   HERO (editorial)
-   ========================= */
 
 .hero {
   padding: 44px 0 18px;
@@ -477,10 +513,6 @@ button {
   pointer-events: none;
 }
 
-/* =========================
-   TRUST
-   ========================= */
-
 .trust {
   padding: 14px 0 6px;
 }
@@ -518,10 +550,6 @@ button {
   color: rgb(var(--text) / 0.92);
   font-size: 13px;
 }
-
-/* =========================
-   SECTIONS
-   ========================= */
 
 .section {
   padding: 56px 0;
@@ -624,10 +652,6 @@ button {
   margin: 10px 0 0;
 }
 
-/* =========================
-   BUTTONS (2026)
-   ========================= */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -675,10 +699,6 @@ button {
   background: rgb(var(--panel) / 0.05);
 }
 
-/* =========================
-   SERVICES CARDS
-   ========================= */
-
 .grid3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -725,10 +745,6 @@ button {
   margin: 6px 0;
 }
 
-/* =========================
-   CTA BAND
-   ========================= */
-
 .ctaBand {
   margin-top: 18px;
   border: 1px solid rgb(var(--border) / 0.12);
@@ -745,10 +761,6 @@ button {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
-/* =========================
-   GALLERY (2026 premium)
-   ========================= */
 
 .galleryShell {
   position: relative;
@@ -773,7 +785,6 @@ button {
   will-change: transform;
 }
 
-/* ✅ DESKTOP: 4 per view (più grandi) */
 .galleryTrack .shot {
   flex: 0 0 calc((100% - (14px * 3)) / 4);
   border-radius: 22px;
@@ -847,7 +858,6 @@ button {
   }
 }
 
-/* 2026: caption overlay (premium) */
 .shot__cap {
   position: absolute;
   left: 10px;
@@ -945,10 +955,6 @@ button {
   }
 }
 
-/* =========================
-   REVIEWS (2026 premium) — FIX
-   ========================= */
-
 .reviewsShell {
   position: relative;
   display: grid;
@@ -959,7 +965,7 @@ button {
 }
 
 .reviewsViewport {
-  overflow: hidden; /* slider */
+  overflow: hidden;
   border-radius: var(--radius2);
   background: transparent;
   padding: 0;
@@ -1033,10 +1039,9 @@ button {
   color: rgb(var(--muted));
 
   position: relative;
-  border-top: 1px solid rgb(255 255 255 / 0.10);
+  border-top: 1px solid rgb(var(--border) / 0.10);
   padding-top: 12px;
 
-  /* desktop clamp */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
@@ -1086,7 +1091,6 @@ button {
   color: rgb(var(--muted));
 }
 
-/* 2026: micro-badge recensioni (smart chips) */
 .reviewBadges {
   display: flex;
   flex-wrap: wrap;
@@ -1104,10 +1108,6 @@ button {
   font-weight: 800;
   letter-spacing: 0.2px;
 }
-
-/* =========================
-   STEPS
-   ========================= */
 
 .steps {
   margin-top: 18px;
@@ -1158,10 +1158,6 @@ button {
   margin: 0 0 6px;
 }
 
-/* =========================
-   FAQ
-   ========================= */
-
 .faq {
   margin-top: 18px;
   display: grid;
@@ -1206,10 +1202,6 @@ button {
   word-break: break-word;
 }
 
-/* =========================
-   CONTACTS
-   ========================= */
-
 .contactActions {
   display: flex;
   gap: 12px;
@@ -1219,10 +1211,6 @@ button {
 .contacts__note {
   margin-top: 10px;
 }
-
-/* =========================
-   FOOTER (no social changes)
-   ========================= */
 
 .footer {
   padding: 26px 0;
@@ -1260,7 +1248,6 @@ button {
   color: rgb(var(--muted));
 }
 
-/* IMPORTANT: non cambio i social link */
 .footer__link {
   display: block;
   color: rgb(var(--text));
@@ -1301,10 +1288,7 @@ button {
   font-size: 13px;
 }
 
-/* =========================
-   LIGHTBOX (cinematic)
-   ========================= */
-
+/* ===== PREMIUM LIGHTBOX (UPDATED, NO DUPLICATES) ===== */
 body.lb-lock {
   position: fixed;
   left: 0;
@@ -1317,45 +1301,87 @@ body.lb-lock {
 
 .lightbox {
   padding: 0;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  width: min(1040px, calc(100% - 22px));
-  border-radius: 30px;
-
-  background: rgb(var(--bg) / 0.72);
+  border: 0;
+  width: min(1120px, calc(100% - 18px));
+  border-radius: 36px;
   overflow: hidden;
 
-  box-shadow: var(--shadow3);
-  transform: translateY(10px) scale(0.985);
+  background:
+    radial-gradient(900px 420px at 18% 8%, rgb(var(--brand1) / 0.14), transparent 60%),
+    radial-gradient(900px 520px at 82% 10%, rgb(var(--brand2) / 0.12), transparent 62%),
+    linear-gradient(180deg, rgb(var(--panel) / 0.12), rgb(var(--panel) / 0.06)),
+    rgb(var(--bg) / 0.60);
+
+  box-shadow:
+    0 34px 120px rgb(0 0 0 / 0.68),
+    0 18px 60px rgb(0 0 0 / 0.44);
+
+  transform: translateY(18px) scale(0.985);
   opacity: 0;
+
+  position: relative;
+  isolation: isolate;
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
-@supports (background: color-mix(in srgb, #000 50%, #000)) {
-  .lightbox {
-    background: color-mix(in srgb, rgb(var(--bg)) 72%, rgb(0 0 0));
-  }
+.lightbox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--brand1) / 0.75),
+    rgb(255 255 255 / 0.18),
+    rgb(var(--brand2) / 0.75)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.70;
+}
+
+.lightbox::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 22% 0%, rgb(255 255 255 / 0.10), transparent 60%),
+    radial-gradient(900px 520px at 80% 10%, rgb(255 255 255 / 0.08), transparent 62%),
+    linear-gradient(120deg, transparent 35%, rgb(255 255 255 / 0.10) 50%, transparent 65%);
+  opacity: 0.55;
+  transform: translateX(-14%);
 }
 
 .lightbox[open] {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: transform 0.22s var(--ease), opacity 0.22s var(--ease);
+  transition: transform 0.28s var(--ease), opacity 0.28s var(--ease);
+}
+
+.lightbox[open]::after {
+  animation: lbSheen 1.2s var(--ease) 0.05s both;
+}
+
+@keyframes lbSheen {
+  from { transform: translateX(-18%); opacity: 0.0; }
+  to   { transform: translateX(0%);   opacity: 0.55; }
 }
 
 .lightbox::backdrop {
-  background: rgb(0 0 0 / 0.72);
-  backdrop-filter: blur(10px);
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .header,
-  .nav__list,
-  .galleryNav,
-  .reviewsNav,
-  .lightbox,
-  .lightbox::backdrop {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
+  background:
+    radial-gradient(900px 520px at 50% 10%, rgb(var(--brand2) / 0.12), transparent 60%),
+    radial-gradient(900px 520px at 12% 22%, rgb(var(--brand1) / 0.10), transparent 58%),
+    rgb(0 0 0 / 0.80);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 .lightbox__figure {
@@ -1366,71 +1392,160 @@ body.lb-lock {
 
 .lightbox__img {
   width: 100%;
-  max-height: 76vh;
+  max-height: min(78vh, 780px);
   object-fit: contain;
-  background: rgb(0 0 0);
+
+  background:
+    radial-gradient(900px 520px at 30% 18%, rgb(255 255 255 / 0.07), transparent 60%),
+    radial-gradient(900px 520px at 70% 10%, rgb(255 255 255 / 0.05), transparent 62%),
+    rgb(0 0 0 / 0.90);
+
   opacity: 0;
-  transform: scale(0.995);
-  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  transform: translateY(8px) scale(0.992);
+  transform-origin: 50% 50%;
+  transition: opacity 0.26s var(--ease), transform 0.26s var(--ease);
+
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
 }
 
 .lightbox__img.is-loaded {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0) scale(1);
+}
+
+.lightbox.is-zoom .lightbox__img {
+  cursor: grab;
+}
+
+.lightbox.is-zoom .lightbox__img:active {
+  cursor: grabbing;
 }
 
 .lightbox__cap {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 6;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 12px 14px;
-  border-top: 1px solid rgb(255 255 255 / 0.12);
+  gap: 12px;
 
+  padding: 10px 12px;
+  border-radius: 18px;
+
+  border: 1px solid rgb(255 255 255 / 0.14);
   background:
-    radial-gradient(700px 260px at 20% 0%, rgb(var(--brand2) / 0.12), transparent 60%),
-    linear-gradient(to top, rgb(0 0 0 / 0.58), rgb(0 0 0 / 0.18));
+    radial-gradient(700px 260px at 20% 0%, rgb(var(--brand2) / 0.10), transparent 60%),
+    rgb(0 0 0 / 0.46);
+
+  box-shadow: 0 22px 85px rgb(0 0 0 / 0.52);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
 }
 
 .lb__title {
-  font-weight: 800;
-  color: rgb(var(--text) / 0.92);
-  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.1px;
+  color: rgb(255 255 255 / 0.94);
+  min-width: 0;
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.lb__right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.lb__zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+
+  color: rgb(255 255 255 / 0.84);
+  padding: 7px 10px;
+  border-radius: 999px;
+
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.07);
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 0.20s var(--ease), transform 0.20s var(--ease);
+}
+
+.lightbox.is-zoom .lb__zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .lb__count {
   font-size: 13px;
-  color: rgb(var(--muted) / 0.9);
-  flex: 0 0 auto;
+  font-weight: 900;
+  color: rgb(255 255 255 / 0.82);
+
+  padding: 7px 10px;
+  border-radius: 999px;
+
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.08);
 }
 
 .lightbox__close,
 .lightbox__nav {
-  background: rgb(0 0 0 / 0.75);
-  color: rgb(255 255 255);
-  border: 1px solid rgb(255 255 255 / 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 0.6);
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(0 0 0 / 0.52);
+  color: rgb(255 255 255 / 0.96);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 22px 85px rgb(0 0 0 / 0.52),
+    0 10px 30px rgb(0 0 0 / 0.42);
+
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+
+  transition:
+    transform 0.20s var(--ease),
+    filter 0.20s var(--ease),
+    background 0.20s var(--ease),
+    border-color 0.20s var(--ease),
+    opacity 0.22s var(--ease);
+
   -webkit-tap-highlight-color: transparent;
 }
 
 .lightbox__close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 14px;
+  right: 14px;
   z-index: 7;
+
   width: 48px;
   height: 48px;
   border-radius: 999px;
-  font-size: 26px;
+
+  font-size: 22px;
+  line-height: 0;
 }
 
 .lightbox__nav {
@@ -1438,56 +1553,115 @@ body.lb-lock {
   top: 50%;
   transform: translateY(-50%);
   z-index: 6;
-  width: 56px;
-  height: 56px;
+
+  width: 58px;
+  height: 58px;
   border-radius: 999px;
-  font-size: 34px;
+
+  font-size: 30px;
   line-height: 0;
 }
 
-.lightbox__nav--prev {
-  left: 10px;
-}
+.lightbox__nav--prev { left: 14px; }
+.lightbox__nav--next { right: 14px; }
 
-.lightbox__nav--next {
-  right: 10px;
-}
-
-.lightbox__close:hover {
-  background: rgb(0 0 0 / 0.95);
-  transform: scale(1.08);
-}
-
-.lightbox__nav:hover {
-  background: rgb(0 0 0 / 0.95);
-  transform: translateY(-50%) scale(1.08);
-}
-
-@media (max-width: 720px) {
-  .lightbox__nav {
-    width: 46px;
-    height: 46px;
-    font-size: 30px;
+@media (hover: hover) and (pointer: fine) {
+  .lightbox__close:hover,
+  .lightbox__nav:hover {
+    filter: brightness(1.10);
+    border-color: rgb(255 255 255 / 0.22);
   }
 
-  .lightbox__close {
-    width: 44px;
-    height: 44px;
-    font-size: 24px;
+  .lightbox__close:hover {
+    transform: scale(1.08);
+    background: rgb(0 0 0 / 0.62);
+  }
+
+  .lightbox__nav:hover {
+    transform: translateY(-50%) scale(1.08);
+    background: rgb(0 0 0 / 0.62);
   }
 }
 
-.galleryNav[aria-hidden="true"],
-.reviewsNav[aria-hidden="true"],
+.lightbox__close:active { transform: scale(0.98); }
+.lightbox__nav:active { transform: translateY(-50%) scale(0.98); }
+
+.lightbox.is-ui-hidden .lightbox__close,
+.lightbox.is-ui-hidden .lightbox__nav,
+.lightbox.is-ui-hidden .lightbox__cap {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+
+.lightbox.is-ui-hidden .lightbox__nav {
+  transform: translateY(-50%) translateY(6px);
+}
+
 .lightbox__nav[aria-hidden="true"] {
   visibility: hidden !important;
   pointer-events: none !important;
   opacity: 0 !important;
 }
 
-/* =========================
-   A11Y focus
-   ========================= */
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible {
+  outline: 2px solid rgb(var(--focus) / 0.95);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .lightbox {
+    border-radius: 28px;
+    width: min(1120px, calc(100% - 14px));
+  }
+
+  .lightbox__nav {
+    width: 46px;
+    height: 46px;
+    font-size: 26px;
+  }
+
+  .lightbox__close {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .lightbox__cap {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 16px;
+    padding: 10px 10px;
+  }
+
+  .lightbox__nav--prev { left: 10px; }
+  .lightbox__nav--next { right: 10px; }
+}
+
+@supports (padding: max(0px)) {
+  .lightbox__close {
+    top: max(14px, env(safe-area-inset-top));
+    right: max(14px, env(safe-area-inset-right));
+  }
+  .lightbox__cap {
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  .lightbox__nav--prev {
+    left: max(14px, env(safe-area-inset-left));
+  }
+  .lightbox__nav--next {
+    right: max(14px, env(safe-area-inset-right));
+  }
+}
+
+.galleryNav[aria-hidden="true"],
+.reviewsNav[aria-hidden="true"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
 
 .nav__toggle:focus-visible,
 .btn:focus-visible,
@@ -1512,10 +1686,6 @@ body.lb-lock {
     outline-offset: 3px;
   }
 }
-
-/* =========================
-   Responsive
-   ========================= */
 
 @media (max-width: 980px) {
   .hero__grid {
@@ -1547,65 +1717,20 @@ body.lb-lock {
     grid-template-columns: 1fr;
   }
 
-  .nav__toggle {
-    display: inline-flex;
-  }
-
-  .nav__list {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 56px;
-
-    background: rgb(var(--bg) / 0.95);
-    border: 1px solid rgb(var(--border) / 0.12);
-    border-radius: var(--radius2);
-    padding: 10px;
-    min-width: 260px;
-
-    flex-direction: column;
-    gap: 6px;
-
-    box-shadow: var(--shadow2);
-    backdrop-filter: blur(12px);
-  }
-
-  @supports (background: color-mix(in srgb, #000 50%, #000)) {
-    .nav__list {
-      background: color-mix(in srgb, rgb(var(--bg)) 95%, rgb(0 0 0));
-    }
-  }
-
-  .nav__list.is-open {
-    display: flex;
-  }
-
-  .nav__list a {
-    width: 100%;
-    padding: 12px;
-    white-space: normal;
-  }
-
-  .nav__list .nav__cta {
-    width: fit-content;
-    padding: 10px 14px;
-  }
-
   .galleryTrack .shot {
     flex: 0 0 calc((100% - 14px) / 2);
   }
 
-  /* recensioni: 1 slide per view */
   .reviewSlide {
     flex: 0 0 100%;
   }
 
-  /* ✅ MOBILE: non troncare il testo */
   .reviewText {
     display: block;
     -webkit-line-clamp: unset;
     -webkit-box-orient: unset;
     overflow: visible;
+    text-overflow: initial;
   }
 }
 
@@ -1615,9 +1740,36 @@ body.lb-lock {
   }
 }
 
-/* =========================
-   Contrast / Forced colors
-   ========================= */
+@media (prefers-reduced-transparency: reduce) {
+  .header,
+  .nav__list,
+  .galleryNav,
+  .reviewsNav,
+  .lightbox,
+  .lightbox__cap,
+  .lightbox__close,
+  .lightbox__nav,
+  .lightbox::backdrop {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox[open],
+  .lightbox__img,
+  .lightbox__close,
+  .lightbox__nav,
+  .lightbox[open]::after,
+  .lightbox__cap,
+  .lb__zoom {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .lightbox__img { opacity: 1; }
+}
 
 @media (prefers-contrast: more) {
   :root {
@@ -1656,6 +1808,24 @@ body.lb-lock {
     color: CanvasText;
     border-color: CanvasText;
   }
+
+  .lightbox,
+  .lightbox__cap,
+  .lightbox__close,
+  .lightbox__nav,
+  .lb__count,
+  .lb__zoom {
+    forced-color-adjust: auto;
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+
+  .lightbox::before,
+  .lightbox::after { display: none; }
+
+  .lightbox::backdrop { background: Canvas; }
 
   .nav__toggle:focus,
   .btn:focus,
