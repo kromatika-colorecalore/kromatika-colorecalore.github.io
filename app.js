@@ -17,6 +17,7 @@
       window.open(WA_URL, "_blank");
     })
   );
+
   document.querySelectorAll("[data-mail]").forEach((btn) =>
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -100,7 +101,6 @@
     }
 
     let index = 0;
-
     const maxIndex = () => Math.max(0, items.length - perView());
 
     const updateNav = () => {
@@ -170,7 +170,6 @@
   let current = 0;
   let lastScrollY = 0;
   let lastActiveEl = null;
-
   let prevScrollBehavior = "";
 
   const ZOOM_SCALE = 1.9;
@@ -328,7 +327,7 @@
     });
 
     dlg.addEventListener("close", () => {
-      if (dlg) dlg.classList.remove("is-ui-hidden");
+      dlg.classList.remove("is-ui-hidden");
       resetZoom();
 
       unlockScroll();
@@ -384,6 +383,10 @@
     statusText: ({ from, to, total }) => `Recensioni: ${from} a ${to} di ${total}.`
   });
 
+  // ---------------------------
+  // Reviews dialog (NO innerHTML, NO inline style)
+  // ---------------------------
+
   function ensureReviewDialog() {
     let dlg = document.getElementById("reviewDialog");
     if (dlg) return dlg;
@@ -391,31 +394,67 @@
     dlg = document.createElement("dialog");
     dlg.id = "reviewDialog";
     dlg.className = "reviewDialog";
-    dlg.innerHTML = `
-      <div class="reviewDialog__inner">
-        <div class="reviewDialog__top">
-          <div>
-            <p class="reviewDialog__name" id="reviewDlgName"></p>
-            <div class="reviewDialog__meta" id="reviewDlgMeta"></div>
-            <div class="reviewDialog__job" id="reviewDlgJob"></div>
-          </div>
-          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
-            <div class="reviewDialog__stars" id="reviewDlgStars" aria-label="Valutazione"></div>
-            <button class="reviewDialog__close" type="button" aria-label="Chiudi">×</button>
-          </div>
-        </div>
 
-        <div class="reviewDialog__media" id="reviewDlgMedia" style="display:none;">
-          <img alt="Foto collegata alla recensione" />
-        </div>
+    const inner = document.createElement("div");
+    inner.className = "reviewDialog__inner";
+    dlg.appendChild(inner);
 
-        <div class="reviewDialog__text" id="reviewDlgText"></div>
-      </div>
-    `;
+    const top = document.createElement("div");
+    top.className = "reviewDialog__top";
+    inner.appendChild(top);
+
+    const left = document.createElement("div");
+    top.appendChild(left);
+
+    const name = document.createElement("p");
+    name.className = "reviewDialog__name";
+    name.id = "reviewDlgName";
+    left.appendChild(name);
+
+    const meta = document.createElement("div");
+    meta.className = "reviewDialog__meta";
+    meta.id = "reviewDlgMeta";
+    left.appendChild(meta);
+
+    const job = document.createElement("div");
+    job.className = "reviewDialog__job";
+    job.id = "reviewDlgJob";
+    left.appendChild(job);
+
+    const right = document.createElement("div");
+    right.className = "reviewDialog__side";
+    top.appendChild(right);
+
+    const stars = document.createElement("div");
+    stars.className = "reviewDialog__stars";
+    stars.id = "reviewDlgStars";
+    stars.setAttribute("aria-label", "Valutazione");
+    right.appendChild(stars);
+
+    const close = document.createElement("button");
+    close.className = "reviewDialog__close";
+    close.type = "button";
+    close.setAttribute("aria-label", "Chiudi");
+    close.textContent = "×";
+    right.appendChild(close);
+
+    const mediaWrap = document.createElement("div");
+    mediaWrap.className = "reviewDialog__media is-hidden";
+    mediaWrap.id = "reviewDlgMedia";
+    inner.appendChild(mediaWrap);
+
+    const mediaImg = document.createElement("img");
+    mediaImg.alt = "Foto collegata alla recensione";
+    mediaWrap.appendChild(mediaImg);
+
+    const text = document.createElement("div");
+    text.className = "reviewDialog__text";
+    text.id = "reviewDlgText";
+    inner.appendChild(text);
+
     document.body.appendChild(dlg);
 
-    dlg.querySelector(".reviewDialog__close").addEventListener("click", () => dlg.close());
-
+    close.addEventListener("click", () => dlg.close());
     dlg.addEventListener("click", (e) => {
       if (e.target === dlg) dlg.close();
     });
@@ -423,7 +462,7 @@
     return dlg;
   }
 
-  function starHTML(count) {
+  function starText(count) {
     const full = Math.max(0, Math.min(5, Number(count) || 0));
     let s = "";
     for (let i = 0; i < 5; i++) s += i < full ? "★" : "☆";
@@ -448,7 +487,7 @@
     dlg.querySelector("#reviewDlgText").textContent = text;
 
     const st = dlg.querySelector("#reviewDlgStars");
-    st.textContent = starHTML(stars);
+    st.textContent = starText(stars);
 
     const mediaWrap = dlg.querySelector("#reviewDlgMedia");
     const mediaImg = mediaWrap.querySelector("img");
@@ -456,10 +495,10 @@
     if (hasImg) {
       mediaImg.src = img.getAttribute("src");
       mediaImg.alt = img.getAttribute("alt") || "Foto collegata alla recensione";
-      mediaWrap.style.display = "";
+      mediaWrap.classList.remove("is-hidden");
     } else {
       mediaImg.removeAttribute("src");
-      mediaWrap.style.display = "none";
+      mediaWrap.classList.add("is-hidden");
     }
 
     dlg.showModal();
