@@ -1972,8 +1972,12 @@ body.lb-lock {
   }
 }
 
+.noscriptBox { padding: 12px 0; }
+.noscriptText { margin: 0; }
+
 @media (max-width: 720px) {
   .galleryTrack .shot {
     flex: 0 0 100%;
   }
 }
+
