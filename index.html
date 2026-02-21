@@ -8,7 +8,6 @@
   		default-src 'self';
   		base-uri 'self';
   		object-src 'none';
-  		frame-ancestors 'none';
   		form-action 'self';
   		img-src 'self' data: https:;
   		font-src 'self' data: https:;
@@ -17,9 +16,7 @@
   		connect-src 'self' https:;
   		upgrade-insecure-requests;
   		block-all-mixed-content;
-		require-trusted-types-for 'script';
-		trusted-types default;
-	" />
+	">
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
@@ -860,4 +857,5 @@
     <script src="app.js" defer></script>
   </body>
 </html>
+
 
