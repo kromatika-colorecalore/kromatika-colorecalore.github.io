@@ -2,6 +2,23 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
+
+    <!-- CSP (GitHub Pages: via meta). Nota: l'hash deve combaciare ESATTAMENTE col contenuto del JSON-LD sotto. -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      base-uri 'self';
+      object-src 'none';
+      frame-ancestors 'none';
+      form-action 'self';
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      style-src 'self';
+      script-src 'self' 'sha256-lm5ySfYfy8hgRVZjA8KfypA1pAh0HhorEazwKkKELCA=';
+      connect-src 'self' https:;
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+    " />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <meta name="format-detection" content="telephone=no" />
@@ -34,7 +51,10 @@
     />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:url" content="https://kromatika-colorecalore.github.io/" />
-    <meta property="og:image" content="https://kromatika-colorecalore.github.io/assets/og-cover.avif" />
+    <meta
+      property="og:image"
+      content="https://kromatika-colorecalore.github.io/assets/og-cover.avif"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -44,7 +64,10 @@
       name="twitter:description"
       content="Decoratori d'interni dal 1974. QSC: Qualità • Servizio • Convenienza."
     />
-    <meta name="twitter:image" content="https://kromatika-colorecalore.github.io/assets/og-cover.avif" />
+    <meta
+      name="twitter:image"
+      content="https://kromatika-colorecalore.github.io/assets/og-cover.avif"
+    />
 
     <link rel="preload" as="image" href="assets/hero.avif" fetchpriority="high" />
     <link rel="preload" as="style" href="style.css" />
@@ -81,8 +104,8 @@
     <a class="skip" href="#contenuto">Salta al contenuto</a>
 
     <noscript>
-      <div class="container" style="padding: 12px 0">
-        <p style="margin: 0">
+      <div class="container noscriptBox">
+        <p class="noscriptText">
           Questo sito usa JavaScript per menu e slider. Senza JavaScript puoi comunque navigare e
           aprire le immagini in una nuova pagina cliccandole.
         </p>
@@ -223,9 +246,7 @@
             </div>
 
             <div class="pillRow" aria-label="Info aziendali">
-              <span class="pill"
-                >Operativi su Milano e provincia • Base a Trezzano sul Naviglio (MI)</span
-              >
+              <span class="pill">Operativi su Milano e provincia • Base a Trezzano sul Naviglio (MI)</span>
               <span class="pill">Registro Imprese Milano</span>
             </div>
 
@@ -320,7 +341,7 @@
 
             <div class="galleryViewport">
               <div class="galleryTrack" id="galleryTrack">
-                <a class="shot" href="assets/lavoro1.avif" aria-label="Apri Lavoro 1 a schermo intero">
+                 <a class="shot" href="assets/lavoro1.avif" aria-label="Apri Lavoro 1 a schermo intero">
                   <img src="assets/lavoro1.avif" alt="Lavoro 1" width="900" height="900" loading="lazy" decoding="async" />
                   <span class="shot__cap" aria-hidden="true">
                     <span class="shotTitle">Lavoro 1</span><span class="shotTag">Interni</span>
@@ -506,8 +527,7 @@
           </dialog>
         </div>
       </section>
-
-      <section id="recensioni" class="section">
+	      <section id="recensioni" class="section">
         <div class="container">
           <div class="sectionHead reveal">
             <h2>Recensioni</h2>
@@ -858,6 +878,7 @@
         </div>
       </div>
     </footer>
-      <script src="app.js" defer></script>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
