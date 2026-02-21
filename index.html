@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- CSP (GitHub Pages: via meta). Nota: l'hash deve combaciare ESATTAMENTE col contenuto del JSON-LD sotto. -->
-  	<meta http-equiv="Content-Security-Policy" content="
-  		default-src 'self';
-  		base-uri 'self';
-  		object-src 'none';
-  		form-action 'self';
-  		img-src 'self' data: https:;
-  		font-src 'self' data: https:;
-  		style-src 'self';
-  		script-src 'self';
-  		connect-src 'self' https:;
-  		upgrade-insecure-requests;
-  		block-all-mixed-content;
-	">
+    <!-- CSP (GitHub Pages: via meta) -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      base-uri 'self';
+      object-src 'none';
+      form-action 'self';
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      style-src 'self';
+      script-src 'self';
+      connect-src 'self' https:;
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+    " />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
@@ -301,11 +301,13 @@
 
           <p class="sr-only" id="galleryStatus" aria-live="polite"></p>
 
-          <div class="galleryShell reveal" aria-label="Slider galleria lavori">
+          <!-- ✅ ARIA carousel: role/roledescription + aria-controls -->
+          <div class="galleryShell reveal" aria-label="Slider galleria lavori" role="region" aria-roledescription="carousel">
             <button
               class="galleryNav galleryNav--prev"
               type="button"
               aria-label="Immagini precedenti"
+              aria-controls="galleryViewport"
               aria-disabled="true"
               aria-hidden="true"
               disabled
@@ -314,9 +316,9 @@
               ‹
             </button>
 
-            <div class="galleryViewport">
+            <div class="galleryViewport" id="galleryViewport">
               <div class="galleryTrack" id="galleryTrack">
-                 <a class="shot" href="assets/lavoro1.avif" aria-label="Apri Lavoro 1 a schermo intero">
+                <a class="shot" href="assets/lavoro1.avif" aria-label="Apri Lavoro 1 a schermo intero">
                   <img src="assets/lavoro1.avif" alt="Lavoro 1" width="900" height="900" loading="lazy" decoding="async" />
                   <span class="shot__cap" aria-hidden="true">
                     <span class="shotTitle">Lavoro 1</span><span class="shotTag">Interni</span>
@@ -455,6 +457,7 @@
               class="galleryNav galleryNav--next"
               type="button"
               aria-label="Immagini successive"
+              aria-controls="galleryViewport"
               aria-disabled="false"
               aria-hidden="false"
             >
@@ -502,7 +505,8 @@
           </dialog>
         </div>
       </section>
-	      <section id="recensioni" class="section">
+
+      <section id="recensioni" class="section">
         <div class="container">
           <div class="sectionHead reveal">
             <h2>Recensioni</h2>
@@ -518,11 +522,13 @@
 
           <p class="sr-only" id="reviewsStatus" aria-live="polite"></p>
 
-          <div class="reviewsShell reveal">
+          <!-- ✅ ARIA carousel: role/roledescription + aria-controls -->
+          <div class="reviewsShell reveal" role="region" aria-roledescription="carousel" aria-label="Slider recensioni">
             <button
               class="reviewsNav reviewsNav--prev"
               type="button"
               aria-label="Recensioni precedenti"
+              aria-controls="reviewsViewport"
               aria-disabled="true"
               aria-hidden="true"
               disabled
@@ -531,7 +537,7 @@
               ‹
             </button>
 
-            <div class="reviewsViewport" aria-label="Slider recensioni">
+            <div class="reviewsViewport" id="reviewsViewport" aria-label="Slider recensioni">
               <div class="reviewsTrack" id="reviewsTrack">
                 <article class="reviewSlide" aria-label="Recensione: Alice Garlaschelli, 5 stelle">
                   <div class="reviewTop">
@@ -668,6 +674,7 @@
               class="reviewsNav reviewsNav--next"
               type="button"
               aria-label="Recensioni successive"
+              aria-controls="reviewsViewport"
               aria-disabled="false"
               aria-hidden="false"
             >
@@ -780,8 +787,9 @@
               target="_blank"
               rel="noopener noreferrer"
               data-wa
-              >WhatsApp</a
             >
+              WhatsApp
+            </a>
             <a class="btn btn--ghost" href="mailto:colorecalore1974@gmail.com" data-mail>Invia Email</a>
           </div>
 
@@ -836,15 +844,17 @@
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.instapro.it/ditta/kromatika-di-maria-teresa-foddis"
-              >Instapro</a
             >
+              Instapro
+            </a>
             <a
               class="footer__link"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/ColoreCalore"
-              >Facebook</a
             >
+              Facebook
+            </a>
           </div>
         </div>
 
@@ -857,5 +867,3 @@
     <script src="app.js" defer></script>
   </body>
 </html>
-
-
