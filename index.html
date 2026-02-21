@@ -4,20 +4,22 @@
     <meta charset="utf-8" />
 
     <!-- CSP (GitHub Pages: via meta). Nota: l'hash deve combaciare ESATTAMENTE col contenuto del JSON-LD sotto. -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      base-uri 'self';
-      object-src 'none';
-      frame-ancestors 'none';
-      form-action 'self';
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      style-src 'self';
-      script-src 'self' 'sha256-lm5ySfYfy8hgRVZjA8KfypA1pAh0HhorEazwKkKELCA=';
-      connect-src 'self' https:;
-      upgrade-insecure-requests;
-      block-all-mixed-content;
-    " />
+  	<meta http-equiv="Content-Security-Policy" content="
+  		default-src 'self';
+  		base-uri 'self';
+  		object-src 'none';
+  		frame-ancestors 'none';
+  		form-action 'self';
+  		img-src 'self' data: https:;
+  		font-src 'self' data: https:;
+  		style-src 'self';
+  		script-src 'self';
+  		connect-src 'self' https:;
+  		upgrade-insecure-requests;
+  		block-all-mixed-content;
+		require-trusted-types-for 'script';
+		trusted-types default;
+	" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
@@ -73,31 +75,7 @@
     <link rel="preload" as="style" href="style.css" />
     <link rel="stylesheet" href="style.css" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "@id": "https://kromatika-colorecalore.github.io/#business",
-        "name": "KROMATIKA + Colore&Calore",
-        "url": "https://kromatika-colorecalore.github.io/",
-        "image": "https://kromatika-colorecalore.github.io/assets/og-cover.avif",
-        "description": "Tinteggiature e rifiniture d'interni dal 1974. QSC: Qualità, Servizio, Convenienza. Operativi su Milano e provincia con base a Trezzano sul Naviglio.",
-        "areaServed": ["Milano", "Trezzano sul Naviglio", "Provincia di Milano"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Trezzano sul Naviglio",
-          "addressRegion": "MI",
-          "addressCountry": "IT"
-        },
-        "telephone": ["+39 3398602509", "+39 3891012147"],
-        "email": "colorecalore1974@gmail.com",
-        "openingHours": ["Mo-Fr 09:00-18:30", "Sa 09:00-13:30"],
-        "sameAs": [
-          "https://www.instapro.it/ditta/kromatika-di-maria-teresa-foddis",
-          "https://www.facebook.com/ColoreCalore"
-        ]
-      }
-    </script>
+    <script src="assets/schema.json" type="application/ld+json"></script>
   </head>
 
   <body>
@@ -882,3 +860,4 @@
     <script src="app.js" defer></script>
   </body>
 </html>
+
