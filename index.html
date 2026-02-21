@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- CSP (GitHub Pages: via meta) -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       base-uri 'self';
@@ -68,7 +67,7 @@
       content="https://kromatika-colorecalore.github.io/assets/og-cover.avif"
     />
 
-    <link rel="preload" as="image" href="assets/hero.avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/hero-1200.avif" fetchpriority="high" />
     <link rel="preload" as="style" href="style.css" />
     <link rel="stylesheet" href="style.css" />
 
@@ -92,11 +91,11 @@
         <a class="brand" href="#top" aria-label="KROMATIKA + Colore&Calore, vai all'inizio pagina">
           <span class="brand__mark" aria-hidden="true">
             <img
-              src="assets/logo.avif"
+              src="assets/logo-96.avif"
               alt=""
               class="brand__logo"
-              width="88"
-              height="88"
+              width="44"
+              height="44"
               decoding="async"
             />
           </span>
@@ -175,7 +174,13 @@
 
           <div class="hero__media reveal" aria-label="Foto lavori">
             <img
-              src="assets/hero.avif"
+              src="assets/hero-1200.avif"
+              srcset="
+                assets/hero-480.avif 480w,
+                assets/hero-768.avif 768w,
+                assets/hero-1200.avif 1200w
+              "
+              sizes="(max-width: 980px) 92vw, 520px"
               alt="Esempio di tinteggiatura e rifinitura d'interni"
               width="1200"
               height="900"
@@ -301,7 +306,6 @@
 
           <p class="sr-only" id="galleryStatus" aria-live="polite"></p>
 
-          <!-- ✅ ARIA carousel: role/roledescription + aria-controls -->
           <div class="galleryShell reveal" aria-label="Slider galleria lavori" role="region" aria-roledescription="carousel">
             <button
               class="galleryNav galleryNav--prev"
@@ -522,7 +526,6 @@
 
           <p class="sr-only" id="reviewsStatus" aria-live="polite"></p>
 
-          <!-- ✅ ARIA carousel: role/roledescription + aria-controls -->
           <div class="reviewsShell reveal" role="region" aria-roledescription="carousel" aria-label="Slider recensioni">
             <button
               class="reviewsNav reviewsNav--prev"
