@@ -14,7 +14,7 @@
   document.querySelectorAll("[data-wa]").forEach((btn) =>
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.open(WA_URL, "_blank");
+      window.open(WA_URL, "_blank", "noopener,noreferrer");
     })
   );
 
@@ -89,7 +89,15 @@
     btnEl.setAttribute("aria-hidden", visible ? "false" : "true");
   }
 
-  function initSlider({ track, prevBtn, nextBtn, statusEl, itemSelector, perView, statusText }) {
+  function initSlider({
+    track,
+    prevBtn,
+    nextBtn,
+    statusEl,
+    itemSelector,
+    perView,
+    statusText
+  }) {
     if (!track || !prevBtn || !nextBtn) return;
 
     const items = Array.from(track.querySelectorAll(itemSelector));
@@ -382,10 +390,6 @@
     perView: () => (window.matchMedia("(max-width: 980px)").matches ? 1 : 3),
     statusText: ({ from, to, total }) => `Recensioni: ${from} a ${to} di ${total}.`
   });
-
-  // ---------------------------
-  // Reviews dialog (NO innerHTML, NO inline style)
-  // ---------------------------
 
   function ensureReviewDialog() {
     let dlg = document.getElementById("reviewDialog");
