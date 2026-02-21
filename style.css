@@ -102,6 +102,13 @@ body {
   position: relative;
 }
 
+html.nav-lock,
+body.nav-lock {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 ::selection {
   background: rgb(var(--brand2) / 0.35);
 }
@@ -2063,4 +2070,5 @@ body.lb-lock {
     flex: 0 0 100%;
   }
 }
+
 
